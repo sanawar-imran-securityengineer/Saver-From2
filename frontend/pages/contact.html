@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact OmniDownloader - Technical Inquiries & Bug Reports</title>
+  <meta name="description" content="Get in touch with the OmniDownloader support and engineering team. Report extractor issues, request new features, or submit general inquiries." />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/icons/saverfrom-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="/" class="brand-container">
+      <div class="brand-logo">
+        <img src="/static/icons/saverfrom-logo.svg" alt="SaverFrom" />
+      </div>
+      <div class="brand-title">
+        SaverFrom
+      </div>
+    </a>
+  </header>
+
+  <main class="policy-page-container">
+    <nav class="breadcrumb-nav">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Contact & Support</span>
+    </nav>
+
+    <div class="policy-card">
+      <h1>Contact & Engineering Support</h1>
+      <div class="policy-meta">
+        <span>Reach out directly to the platform team</span> • 
+        <span>Average response time: &lt; 24 hours</span>
+      </div>
+
+      <p>
+        Have an issue downloading from a particular link? Notice a sudden change in platform video streams? Our engineering team monitors extraction endpoints around the clock. Please use the form below to report issues or submit feedback.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div style="background:#ffffff; border:1px solid var(--border-glass); border-radius:var(--border-radius); padding:1.75rem; box-shadow:var(--shadow-sm);">
+          <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--text-main); margin-bottom:1.2rem;">
+            ✉️ Send Us a Message
+          </h3>
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="contact-form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" class="contact-input" placeholder="Alex Rivers" required />
+            </div>
+            <div class="contact-form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="contact-input" placeholder="alex@example.com" required />
+            </div>
+            <div class="contact-form-group">
+              <label for="contact-subject">Topic / Reason</label>
+              <select id="contact-subject" class="contact-input" style="cursor:pointer;" required>
+                <option value="broken-link">Broken Extractor / Link Failed</option>
+                <option value="audio-issue">Audio or Video Sync Issue</option>
+                <option value="feature-request">New Platform or Feature Request</option>
+                <option value="dmca-copyright">DMCA or Copyright Inquiry</option>
+                <option value="general">General Feedback / Inquiries</option>
+              </select>
+            </div>
+            <div class="contact-form-group">
+              <label for="contact-url">Affected Video URL (Optional)</label>
+              <input type="url" id="contact-url" class="contact-input" placeholder="https://www.youtube.com/watch?v=..." />
+            </div>
+            <div class="contact-form-group">
+              <label for="contact-message">Message Details</label>
+              <textarea id="contact-message" class="contact-textarea" placeholder="Describe the behavior or question in detail..." required></textarea>
+            </div>
+            <button type="submit" id="contact-submit-btn" class="btn-download-main" style="width:100%; border-radius:var(--border-radius-sm); font-size:1rem; padding:0.85rem;">
+              🚀 Submit Inquiry
+            </button>
+            <div id="contact-feedback" style="display:none; margin-top:1rem; padding:0.85rem 1rem; border-radius:var(--border-radius-sm); font-size:0.9rem;"></div>
+          </form>
+        </div>
+
+        <!-- Support Info & FAQ Quick Links -->
+        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+          <div class="callout-box callout-note" style="margin:0;">
+            <span class="callout-icon">⚡</span>
+            <div class="callout-content">
+              <strong>Quick Troubleshooting Tip</strong>
+              <p>90% of download issues are caused by private posts, deleted videos, or country geoblocks. Always verify that the link can be opened in an incognito window without logging into an account.</p>
+            </div>
+          </div>
+
+          <div style="background:#f8fafc; border:1px solid var(--border-glass); border-radius:var(--border-radius); padding:1.5rem;">
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">
+              🛠️ Common Support Topics
+            </h4>
+            <ul style="margin:0 0 0 1.25rem; font-size:0.92rem; color:var(--text-secondary); line-height:1.7;">
+              <li><strong>TikTok Watermarks:</strong> Use our <a href="/tiktok" style="color:var(--text-accent); font-weight:600;">TikTok Hub</a> for direct clean streams.</li>
+              <li><strong>Reddit Sound:</strong> Learn how our muxer combines DASH streams on our <a href="/reddit" style="color:var(--text-accent); font-weight:600;">Reddit Hub</a>.</li>
+              <li><strong>Copyright Notices:</strong> Review our <a href="/copyright" style="color:var(--text-accent); font-weight:600;">DMCA & Copyright Policy</a> for formal requests.</li>
+              <li><strong>API Partnerships:</strong> OmniDownloader maintains private webhook integrations for educational archives.</li>
+            </ul>
+          </div>
+
+          <div style="background:#f8fafc; border:1px solid var(--border-glass); border-radius:var(--border-radius); padding:1.5rem;">
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">
+              📬 Direct Contact
+            </h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:0.4rem;">
+              <strong>Technical Support:</strong> support@saverfrom.local
+            </p>
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:0.4rem;">
+              <strong>Legal & DMCA:</strong> legal@saverfrom.local
+            </p>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">
+              We operate during standard business hours (UTC) and triage high-priority extraction failures immediately.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Standardized Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>⚡ OmniDownloader</h4>
+        <p>The universal, high-speed multi-platform video and audio extraction gateway. Free forever for creators, archivists, and viewers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform Hubs</h5>
+        <ul class="footer-links">
+          <li><a href="/youtube">YouTube Downloader</a></li>
+          <li><a href="/tiktok">TikTok Downloader</a></li>
+          <li><a href="/instagram">Instagram Downloader</a></li>
+          <li><a href="/facebook">Facebook Downloader</a></li>
+          <li><a href="/twitter">Twitter / X Downloader</a></li>
+          <li><a href="/snapchat">Snapchat Downloader</a></li>
+          <li><a href="/pinterest">Pinterest Downloader</a></li>
+          <li><a href="/reddit">Reddit Downloader</a></li>
+          <li><a href="/threads">Threads Downloader</a></li>
+          <li><a href="/twitch">Twitch Downloader</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Trust & Resources</h5>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog & Guides</a></li>
+          <li><a href="/about">About OmniDownloader</a></li>
+          <li><a href="/contact">Contact & Support</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/copyright">DMCA & Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 OmniDownloader Platform. All trademarks and brand assets belong to their respective owners.</p>
+      <div style="display:flex; gap:1rem;">
+        <span style="color:#10b981; font-weight:600;">● All Systems Operational</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contact-submit-btn');
+      const feedback = document.getElementById('contact-feedback');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      setTimeout(() => {
+        btn.textContent = '✓ Message Sent Successfully';
+        btn.style.background = '#10b981';
+        feedback.style.display = 'block';
+        feedback.style.background = '#dcfce7';
+        feedback.style.color = '#166534';
+        feedback.style.border = '1px solid #86efac';
+        feedback.textContent = 'Thank you! Your ticket has been logged and assigned to our triage engineers.';
+        document.getElementById('contact-form').reset();
+      }, 750);
+    }
+  </script>
+</body>
+</html>

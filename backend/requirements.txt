@@ -1,0 +1,49 @@
+# ============================================================================
+#  SaverFrom backend — consolidated Python dependencies
+#
+#  This single file replaces the requirements.txt of every original project:
+#    instagrm, pintrest, reddit, snapchat, threads, twitch, twitter, youtbe,
+#    main-platform  (all of which used the same core stack).
+#
+#  Deliberately NOT included (replaced by built-in equivalents):
+#    slowapi            -> in-process sliding-window limiter (utils/ratelimit.py)
+#    structlog          -> stdlib logging with a JSON formatter (utils/security.py)
+#    prometheus-client  -> /api/stats endpoint (routers/health.py)
+#    locust             -> dev-only load-testing tool
+#    rich               -> dev-only console formatting
+#    gunicorn           -> not usable on Hostinger shared Python hosting
+# ============================================================================
+
+# ── Web framework ───────────────────────────────────────────────────────────
+fastapi>=0.110.0,<1.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+
+# ASGI -> WSGI bridge. ONLY needed on Hostinger shared/cloud hosting, where
+# LiteSpeed + Passenger starts the app through a WSGI entry point
+# (deploy/hostinger/passenger_wsgi.py). Harmless everywhere else.
+a2wsgi>=1.10.7
+
+# ── Download engine (the real downloader) ───────────────────────────────────
+yt-dlp>=2024.8.6
+
+# ── HTTP / async I/O ────────────────────────────────────────────────────────
+httpx>=0.27.0
+aiofiles>=23.2.1
+
+# ── Configuration ───────────────────────────────────────────────────────────
+pydantic>=2.5.3
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+
+# ── Caching ─────────────────────────────────────────────────────────────────
+cachetools>=5.3.2
+orjson>=3.9.10
+
+# Optional Redis L2 cache. Not needed on Hostinger (L1-only mode is automatic),
+# and every import of redis is wrapped in try/except, so it can stay commented
+# out and the app will still run perfectly.
+# redis>=5.0.1
+
+# ── Testing (safe to install in production too) ─────────────────────────────
+pytest>=7.4.4

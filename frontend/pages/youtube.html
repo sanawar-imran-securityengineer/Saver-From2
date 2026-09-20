@@ -1,0 +1,747 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Video Downloader Free Without Watermark</title>
+  <meta name="description" content="Download YouTube videos, Shorts, and 320kbps MP3 audio in 1080p and 4K without watermarks. Comprehensive guide, URL structures, mobile walkthrough, and troubleshooting." />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/icons/saverfrom-logo.svg" type="image/svg+xml" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saverfrom.local/" },
+          { "@type": "ListItem", "position": 2, "name": "Downloaders", "item": "https://saverfrom.local/#platforms-section" },
+          { "@type": "ListItem", "position": 3, "name": "YouTube Video Downloader", "item": "https://saverfrom.local/youtube" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "YouTube Video Downloader Free Without Watermark",
+        "description": "Comprehensive engineering guide to downloading YouTube standard videos, Shorts, and MP3 audio tracks with zero watermarks and full quality retention.",
+        "author": { "@type": "Organization", "name": "SaverFrom Research Team" },
+        "publisher": { "@type": "Organization", "name": "SaverFrom", "logo": { "@type": "ImageObject", "url": "https://saverfrom.local/static/icons/youtube.svg" } },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-09-19"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I download YouTube Shorts without watermarks?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmniDownloader extracts native MP4 streams directly from YouTube servers before any watermarks or overlays are rendered." }
+          },
+          {
+            "@type": "Question",
+            "name": "What resolutions are supported for YouTube downloads?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Our engine supports 4K UHD (2160p), 1440p QHD, 1080p Full HD, 720p HD, 480p, and studio-grade 320kbps MP3 audio." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do some YouTube videos experience download speed throttling?",
+            "acceptedAnswer": { "@type": "Answer", "text": "YouTube uses an adaptive n-parameter throttling mechanism on direct CDN chunks. OmniDownloader bypasses this by resolving valid deciphered stream URLs." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I save YouTube videos directly to my iPhone Camera Roll?",
+            "acceptedAnswer": { "@type": "Answer", "text": "On iOS Safari, tap Download Now, open your Safari Downloads manager, select the downloaded MP4, tap the Share icon, and choose 'Save Video'." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I extract only the background audio as an MP3 file?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select the 'Audio MP3' format pill before clicking download to extract isolated, high-bitrate 320kbps audio tracks." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you support YouTube playlist or live stream downloads?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Completed live stream archives (VODs) can be downloaded immediately. For active live broadcasts, wait until the stream concludes so YouTube finalizes the media chunks." }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I do if I get an 'Error 403 Forbidden' response?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A 403 error typically indicates that an origin CDN token has expired. Simply refresh the page and submit the YouTube URL again for a fresh token." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are YouTube private or unlisted videos downloadable?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Unlisted videos can be downloaded if you possess the exact link. Strictly private videos requiring account authentication cannot be accessed without login credentials." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it legal to download YouTube videos for personal use?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Downloading public media for personal archiving, offline study, or fair use commentary is generally permitted under copyright law, provided you do not redistribute or commercialize the content." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to install any browser extensions or desktop software?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. OmniDownloader runs 100% in your web browser across desktop, iOS, Android, and tablets without requiring any software installations." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="/" class="brand-container">
+      <div class="brand-logo">
+        <img src="/static/icons/saverfrom-logo.svg" alt="SaverFrom" />
+      </div>
+      <div class="brand-title">
+        SaverFrom
+      </div>
+    </a>
+  </header>
+
+  <!-- Page Hero -->
+  <main class="page-container">
+    <nav class="breadcrumb-nav">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/#platforms-section">Downloaders</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">YouTube Video Downloader</span>
+    </nav>
+
+    <div class="page-hero">
+      <h1 class="hero-title">
+        YouTube Video Downloader Free Without Watermark
+      </h1>
+      </div>
+
+    <!-- Interactive Platform Downloader Card (Working Backend Intact) -->
+    <div id="downloader-box" class="downloader-box" style="margin-bottom:3rem; border-color:#FF000040;">
+      <form id="platform-form" onsubmit="handlePlatformSubmit(event)">
+        <div class="input-wrapper" style="border-color:#FF000050;">
+          <div class="input-icon">
+            <img src="/static/icons/youtube.svg" alt="YouTube" style="width:22px; height:22px;" />
+          </div>
+          <input
+            type="url"
+            id="platform-url-input"
+            class="url-input"
+            placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/..."
+            value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            required
+            autocomplete="off"
+          />
+          <button type="button" id="btn-paste-plat" class="input-action-btn">📋 Paste</button>
+          <button type="button" id="btn-clear-plat" class="input-action-btn">✕ Clear</button>
+        </div>
+
+        <div class="format-bar">
+          <div class="format-pills">
+            <span class="format-label">Format:</span>
+            <button type="button" class="format-pill active" data-format="best">⚡ Best Quality</button>
+            <button type="button" class="format-pill" data-format="1080p">🎬 1080p HD</button>
+            <button type="button" class="format-pill" data-format="mp3">🎵 Audio MP3</button>
+          </div>
+          <button type="submit" id="btn-submit-plat" class="btn-download-main" style="background:#FF0000;">
+            <span id="btn-icon-plat">⬇️</span>
+            <span id="btn-text-plat">Download YouTube Video</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="error-box-plat" class="error-box">
+        <span>⚠️</span>
+        <span id="error-msg-plat">Could not download this YouTube video. Please try again.</span>
+      </div>
+
+      <!-- Loading Box -->
+      <div id="loading-box-plat" class="loading-box">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.6rem;">
+          <span class="spinner"></span>
+          <span id="loading-msg-plat" style="font-weight:600; color:#1e40af;">Connecting to YouTube extraction service...</span>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div id="result-card-plat" class="result-card">
+        <div class="result-content">
+          <div class="result-thumb-wrapper">
+            <img id="res-thumb" class="result-thumb" src="/static/icons/youtube.svg" alt="Thumbnail" />
+            <span class="result-duration">HD</span>
+          </div>
+          <div class="result-info">
+            <h3 id="res-title">YouTube Media Ready</h3>
+            <div class="result-meta">
+              <span style="font-weight:700; color:#FF0000;">YouTube</span>
+              <span>•</span>
+              <span id="res-quality">1080p Full HD</span>
+              <span>•</span>
+              <span id="res-format">MP4 Video</span>
+            </div>
+            <div class="result-actions">
+              <a id="res-dl-btn" href="#" target="_blank" download class="btn-action-primary" style="background:#FF0000;">
+                ⬇️ Download Now
+              </a>
+              <button type="button" id="res-another-btn" class="btn-action-secondary" onclick="document.getElementById('btn-clear-plat').click()">🔄 Download Another</button>
+              <a href="/" class="btn-action-secondary">🏠 Universal Hub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article & SEO Documentation System -->
+    <div class="article-grid-layout">
+      <!-- Main Article Body -->
+      <article class="article-body">
+        <section id="how-to-download">
+          <h2>1. How to Download YouTube Videos in High Quality</h2>
+          <p>
+            Downloading content from YouTube has historically been complicated by aggressive encoding practices, split audio-video streams (known as adaptive DASH streaming), and restrictive browser policies. OmniDownloader eliminates these barriers by resolving the direct MP4 container stream at maximum bitrate, delivering a pristine, unthrottled file straight to your local storage.
+          </p>
+          <p>
+            Whether you are saving an insightful university lecture, a 4K 60fps nature documentary, or the latest trending vertical clip on YouTube Shorts, the extraction workflow takes less than five seconds.
+          </p>
+
+          <div class="step-cards-container">
+            <div class="step-card">
+              <span class="step-badge">1</span>
+              <h4>Copy Video URL</h4>
+              <p>Navigate to YouTube in your browser or mobile app. Click the <strong>Share</strong> button beneath the video and select <strong>Copy Link</strong>, or copy the direct address from your browser bar.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-badge">2</span>
+              <h4>Paste & Select Format</h4>
+              <p>Paste the link into the URL input box above. Select your preferred output profile: <strong>Best Quality (up to 4K)</strong>, <strong>1080p HD</strong>, or <strong>Audio MP3 (320kbps)</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-badge">3</span>
+              <h4>Instant Direct Save</h4>
+              <p>Click <strong>Download YouTube Video</strong>. Our gateway analyzes the streaming manifest, verifies CDN availability, and serves the file directly as an MP4 attachment with zero watermarks.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="device-guides">
+          <h2>2. Device-Specific Walkthroughs (iOS, Android, PC, Mac)</h2>
+          <p>
+            Different operating systems handle file downloads and media storage uniquely. Below are exact, tested steps for every major consumer device.
+          </p>
+
+          <h3>📱 Apple iOS (iPhone & iPad Safari)</h3>
+          <ol>
+            <li>Open the official YouTube app or Safari, locate your desired video or Short, tap <strong>Share</strong>, and copy the link.</li>
+            <li>Launch <strong>Safari</strong> (or Chrome on iOS) and navigate to <code>saverfrom.local/youtube</code>.</li>
+            <li>Paste the URL into the input field and tap <strong>Download YouTube Video</strong>.</li>
+            <li>When the result card appears, tap <strong>Download Now</strong>. Safari will display a pop-up prompt asking: <em>"Do you want to download [filename].mp4?"</em>. Tap <strong>Download</strong>.</li>
+            <li>Tap the circular <strong>Downloads Icon</strong> in the Safari search bar (or bottom navigation).</li>
+            <li>Tap the downloaded video, tap the iOS <strong>Share sheet icon</strong> (box with an upward arrow), and select <strong>Save Video</strong>. The clip is now permanently stored in your native iOS Photos Camera Roll!</li>
+          </ol>
+
+          <h3>🤖 Android (Chrome, Samsung Internet, Firefox)</h3>
+          <ol>
+            <li>In the YouTube app, tap <strong>Share > Copy link</strong>.</li>
+            <li>Open your Android web browser and paste the link into the input field.</li>
+            <li>Tap <strong>Download</strong>. Your Android browser will automatically trigger the standard download manager and save the file directly to your <code>/Downloads</code> folder.</li>
+            <li>The video is immediately accessible in Google Photos, Samsung Gallery, or VLC for Android with full offline playback.</li>
+          </ol>
+
+          <h3>💻 Desktop (Windows 11/10, macOS, Linux)</h3>
+          <ol>
+            <li>Open YouTube in any modern desktop browser (Google Chrome, Microsoft Edge, Brave, Mozilla Firefox, or Apple Safari).</li>
+            <li>Copy the full URL from the address bar (e.g., <code>https://www.youtube.com/watch?v=...</code>).</li>
+            <li>Paste the URL into OmniDownloader and click the download button.</li>
+            <li>The browser will save the file directly to your designated <strong>Downloads</strong> folder without any third-party desktop utilities, ffmpeg command lines, or Java applets.</li>
+          </ol>
+        </section>
+
+        <section id="url-formats">
+          <h2>3. Supported YouTube URL Formats</h2>
+          <p>
+            YouTube utilizes several distinct URL conventions across desktop browsers, mobile deep-links, embedded players, and shortened domains. OmniDownloader's intelligent pattern engine supports all of the following variations automatically:
+          </p>
+          <ul>
+            <li><strong>Standard Desktop Watch Links:</strong> <code>https://www.youtube.com/watch?v=dQw4w9WgXcQ</code> (including query parameters like <code>&t=45s</code>, which are safely parsed).</li>
+            <li><strong>Shortened youtu.be Links:</strong> <code>https://youtu.be/dQw4w9WgXcQ</code> (commonly generated by mobile share sheets).</li>
+            <li><strong>YouTube Shorts Vertical Clips:</strong> <code>https://www.youtube.com/shorts/3f5NfE4p5l8</code>. Shorts are encoded identically to standard videos and download in native 9:16 vertical 1080p HD.</li>
+            <li><strong>Mobile Web URLs:</strong> <code>https://m.youtube.com/watch?v=...</code>.</li>
+            <li><strong>Embedded Player Links:</strong> <code>https://www.youtube.com/embed/dQw4w9WgXcQ</code>.</li>
+          </ul>
+
+          <div class="callout-box callout-note">
+            <span class="callout-icon">💡</span>
+            <div class="callout-content">
+              <strong>Shorts Zero-Watermark Guarantee:</strong>
+              Unlike TikTok, YouTube Shorts do not burn watermarks into the video stream itself. However, saving via browser screen recording degrades framerate and includes UI buttons. OmniDownloader fetches the authentic, clean source MP4 container directly from Google's video cache.
+            </div>
+          </div>
+        </section>
+
+        <section id="technical-architecture">
+          <h2>4. Technical Deep Dive: YouTube DASH Streams & Throttling Mitigation</h2>
+          <p>
+            To understand how high-speed YouTube downloading works, it is essential to explore YouTube's underlying media distribution architecture:
+          </p>
+          <h3>The Demuxed Adaptive DASH Pipeline</h3>
+          <p>
+            For any resolution above 720p (including 1080p, 1440p 2K, and 2160p 4K), YouTube no longer serves a single interleaved MP4 file containing both video and audio. Instead, YouTube uses <strong>Dynamic Adaptive Streaming over HTTP (DASH)</strong>. Under DASH, the video track (encoded in AVC1, VP9, or AV1) and the audio track (encoded in Opus or AAC) are delivered as separate, synchronized byte streams.
+          </p>
+          <p>
+            When you select <em>Best Quality</em> on OmniDownloader, our backend gateway communicates with YouTube's origin endpoints to fetch both streams simultaneously, verifies their timecode synchronization, and serves a combined, standardized MP4 file ready for universal playback on all TVs, smartphones, and editing software.
+          </p>
+
+          <h3>Preventing CDN Bandwidth Throttling</h3>
+          <p>
+            YouTube employs an adaptive throttling mechanism known as the <em>n-sig parameter challenge</em>. When a non-browser client requests raw video chunks, YouTube's content servers calculate a rate-limiting formula that throttles connection speed to approximately 40–60 KB/s, causing downloads to stall indefinitely.
+          </p>
+          <p>
+            OmniDownloader integrates real-time cipher resolution algorithms that evaluate YouTube's player JavaScript signatures dynamically. By calculating the valid unscrambled token, our streaming proxy fetches video chunks at full unthrottled gigabit speeds.
+          </p>
+        </section>
+
+        <section id="workflow-diagram">
+          <h2>5. OmniDownloader YouTube Data Pipeline</h2>
+          <p>
+            Here is a visual architectural representation of how your request travels from your web browser through our unified gateway to origin CDN nodes and back to your drive:
+          </p>
+
+          <div class="diagram-wrapper">
+            <svg viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="240" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+              <!-- Step 1 -->
+              <rect x="40" y="70" width="180" height="100" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+              <text x="130" y="105" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">Client Browser</text>
+              <text x="130" y="130" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">Pastes YouTube Link</text>
+              <text x="130" y="148" fill="#2563eb" font-family="sans-serif" font-size="11" text-anchor="middle">POST /api/v1/download</text>
+              
+              <!-- Arrow 1 -->
+              <path d="M230 120 H280" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+              <polygon points="280,120 272,115 272,125" fill="#2563eb"/>
+
+              <!-- Step 2 -->
+              <rect x="290" y="70" width="220" height="100" rx="12" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+              <text x="400" y="102" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">OmniDownloader Gateway</text>
+              <text x="400" y="124" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">Deciphers n-sig & Tokens</text>
+              <text x="400" y="144" fill="#10b981" font-family="sans-serif" font-size="11" text-anchor="middle">Muxes Adaptive DASH Streams</text>
+
+              <!-- Arrow 2 -->
+              <path d="M520 120 H570" stroke="#2563eb" stroke-width="2"/>
+              <polygon points="570,120 562,115 562,125" fill="#2563eb"/>
+
+              <!-- Step 3 -->
+              <rect x="580" y="70" width="180" height="100" rx="12" fill="#ffffff" stroke="#ff0000" stroke-width="2"/>
+              <text x="670" y="105" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">YouTube Origin CDN</text>
+              <text x="670" y="130" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">Google Video Servers</text>
+              <text x="670" y="148" fill="#ff0000" font-family="sans-serif" font-size="11" text-anchor="middle">High-Bandwidth Chunk Stream</text>
+            </svg>
+            <p class="diagram-caption">Figure 1: Direct token verification and streaming pipeline delivering high-bitrate media from YouTube infrastructure.</p>
+          </div>
+        </section>
+
+        <section id="format-matrix">
+          <h2>6. YouTube Resolution, Audio Bitrate & Codec Matrix</h2>
+          <p>
+            Refer to this technical specification table to determine which format profile best aligns with your device storage and visual requirements:
+          </p>
+
+          <div class="table-responsive">
+            <table class="seo-table">
+              <thead>
+                <tr>
+                  <th>Resolution Profile</th>
+                  <th>Video Codec</th>
+                  <th>Audio Bitrate</th>
+                  <th>Container</th>
+                  <th>Ideal Use Case</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>4K UHD (2160p)</strong></td>
+                  <td>VP9 / AV1</td>
+                  <td>320 kbps AAC</td>
+                  <td><span class="badge-table badge-info">MP4</span></td>
+                  <td>Large 4K TVs, professional video editing, cinematography archives</td>
+                </tr>
+                <tr>
+                  <td><strong>1440p QHD (2K)</strong></td>
+                  <td>VP9 / AVC1</td>
+                  <td>256 kbps AAC</td>
+                  <td><span class="badge-table badge-info">MP4</span></td>
+                  <td>Gaming monitors, high-res tablets, detailed game walkthroughs</td>
+                </tr>
+                <tr>
+                  <td><strong>1080p Full HD</strong></td>
+                  <td>H.264 (AVC1)</td>
+                  <td>192 kbps AAC</td>
+                  <td><span class="badge-table badge-success">MP4 (Recommended)</span></td>
+                  <td>Smartphones, laptops, social media re-sharing, offline travel</td>
+                </tr>
+                <tr>
+                  <td><strong>720p HD</strong></td>
+                  <td>H.264</td>
+                  <td>128 kbps AAC</td>
+                  <td><span class="badge-table badge-neutral">MP4</span></td>
+                  <td>Low-storage devices, cellular data connections</td>
+                </tr>
+                <tr>
+                  <td><strong>Audio Only (MP3)</strong></td>
+                  <td>Lossless Audio</td>
+                  <td>320 kbps CBR</td>
+                  <td><span class="badge-table badge-warn">MP3</span></td>
+                  <td>Podcasts, interviews, music tracks, language learning</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>7. Troubleshooting & Common Error Resolutions</h2>
+          <p>
+            If you experience an issue while attempting to download a YouTube video, consult the matrix below for immediate troubleshooting solutions:
+          </p>
+
+          <div class="table-responsive">
+            <table class="seo-table">
+              <thead>
+                <tr>
+                  <th>Encountered Error</th>
+                  <th>Root Cause</th>
+                  <th>Step-by-Step Resolution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>HTTP 403 Forbidden</strong></td>
+                  <td>Origin YouTube CDN session token expired before the stream finished buffering.</td>
+                  <td>Click <em>Download Another</em> or refresh the browser page. Re-submit the URL to generate a fresh cryptographic access token.</td>
+                </tr>
+                <tr>
+                  <td><strong>Video Unavailable / Private</strong></td>
+                  <td>The uploader has made the video strictly private, deleted it, or applied geographic territory locks.</td>
+                  <td>Verify that you can watch the video in an incognito window without signing into an account. Strictly private videos cannot be accessed.</td>
+                </tr>
+                <tr>
+                  <td><strong>Download Stalls at 99%</strong></td>
+                  <td>Browser aggressively scanning large MP4 containers with built-in antivirus hooks.</td>
+                  <td>Wait 10–15 seconds for the operating system to finalize disk writing. Do not close your browser tab until complete.</td>
+                </tr>
+                <tr>
+                  <td><strong>Silent Video / No Audio Track</strong></td>
+                  <td>Using an outdated player that does not support modern AAC/Opus codec muxing.</td>
+                  <td>Open the video using <strong>VLC Media Player</strong>, QuickTime, or Windows Media Player. OmniDownloader's MP4 files are 100% compliant with standard specs.</td>
+                </tr>
+                <tr>
+                  <td><strong>Shorts Link Not Detected</strong></td>
+                  <td>URL copied with extraneous tracking parameters (e.g. <code>?si=...</code>).</td>
+                  <td>OmniDownloader strips tracking queries automatically, but you can also trim the link to <code>youtube.com/shorts/[ID]</code> manually.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="faq-section">
+          <h2>8. Frequently Asked Questions (FAQ)</h2>
+          <div class="faq-container">
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I download YouTube Shorts without watermarks?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. OmniDownloader extracts native MP4 streams directly from YouTube servers before any watermarks, channel badges, or UI buttons are applied.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What resolutions are supported for YouTube downloads?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Our engine supports up to 4K UHD (2160p 60fps), 1440p QHD, 1080p Full HD, 720p HD, and studio-grade 320kbps MP3 audio tracks.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Why do some YouTube videos experience download speed throttling?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>YouTube enforces an adaptive n-parameter cipher to throttle automated scraping. OmniDownloader solves this challenge dynamically, ensuring you download at the maximum speed of your home or mobile internet connection.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How do I save YouTube videos directly to my iPhone Camera Roll?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>On iOS Safari, tap Download Now, open your Safari Downloads list, select the downloaded MP4 file, tap the Share icon, and select 'Save Video'. The file will instantly appear in the native iOS Photos app.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I extract only the background audio as an MP3 file?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. Select the 'Audio MP3' format pill on the download card above before submitting. Our gateway isolates the original audio stream and encodes it into a universal 320kbps MP3 track.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do you support YouTube playlist or live stream downloads?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Completed live streams (VOD archives) can be downloaded once YouTube has finished processing the recording. Active, real-time broadcasts cannot be saved until the stream concludes.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What should I do if I get an 'Error 403 Forbidden' response?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>A 403 error means the temporary token assigned by YouTube's CDN expired before your download finished. Simply refresh the page and submit the URL again to generate a new token.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Are YouTube private or unlisted videos downloadable?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Unlisted videos are fully downloadable as long as you have the direct link. Strictly private videos requiring channel password or member login cannot be downloaded.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Is it legal to download YouTube videos for personal use?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Downloading public media for personal offline archiving, education, criticism, or fair use commentary is generally protected. You must never redistribute, monetize, or claim ownership of another creator's intellectual property.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do I need to install any browser extensions or desktop software?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No software or extension installation is required. OmniDownloader operates entirely server-side and works inside any standard browser on iPhone, Android, Mac, Windows, and Linux.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="ethical-advisory">
+          <h2>9. Legal Compliance & Ethical Usage Advisory</h2>
+          <div class="callout-box callout-warning">
+            <span class="callout-icon">⚖️</span>
+            <div class="callout-content">
+              <strong>Respect Creators and Copyright Laws</strong>
+              <p>
+                OmniDownloader is engineered as an educational and personal archiving tool. We encourage users to support their favorite creators by subscribing to their YouTube channels, joining channel memberships, and watching videos on official platforms. Never re-upload downloaded videos to video platforms or use copyrighted music in commercial productions without proper licensing.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Related Platform Guides -->
+        <div class="related-section">
+          <h3>Explore Other Free Media Downloaders</h3>
+          <div class="related-grid">
+            <a href="/tiktok" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/tiktok.svg" alt="TikTok" class="related-icon" />
+                <h4>TikTok Downloader</h4>
+              </div>
+              <p>Save viral TikToks without watermark in Full HD MP4 with background music.</p>
+            </a>
+            <a href="/instagram" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/instagram.svg" alt="Instagram" class="related-icon" />
+                <h4>Instagram Downloader</h4>
+              </div>
+              <p>Extract Instagram Reels, Carousel videos, and Stories without login.</p>
+            </a>
+            <a href="/reddit" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/reddit.svg" alt="Reddit" class="related-icon" />
+                <h4>Reddit Downloader</h4>
+              </div>
+              <p>Download v.redd.it videos with crystal clear merged audio tracks.</p>
+            </a>
+            <a href="/twitter" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/twitter.svg" alt="Twitter" class="related-icon" />
+                <h4>Twitter / X Downloader</h4>
+              </div>
+              <p>Capture high-bitrate X video posts and animated GIFs at full resolution.</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Standardized Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>⚡ OmniDownloader</h4>
+        <p>The universal, high-speed multi-platform video and audio extraction gateway. Free forever for creators, archivists, and viewers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform Hubs</h5>
+        <ul class="footer-links">
+          <li><a href="/youtube">YouTube Downloader</a></li>
+          <li><a href="/tiktok">TikTok Downloader</a></li>
+          <li><a href="/instagram">Instagram Downloader</a></li>
+          <li><a href="/facebook">Facebook Downloader</a></li>
+          <li><a href="/twitter">Twitter / X Downloader</a></li>
+          <li><a href="/snapchat">Snapchat Downloader</a></li>
+          <li><a href="/pinterest">Pinterest Downloader</a></li>
+          <li><a href="/reddit">Reddit Downloader</a></li>
+          <li><a href="/threads">Threads Downloader</a></li>
+          <li><a href="/twitch">Twitch Downloader</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Trust & Resources</h5>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog & Guides</a></li>
+          <li><a href="/about">About OmniDownloader</a></li>
+          <li><a href="/contact">Contact & Support</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/copyright">DMCA & Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 OmniDownloader Platform. All trademarks and brand assets belong to their respective owners.</p>
+      <div style="display:flex; gap:1rem;">
+        <span style="color:#10b981; font-weight:600;">● All Systems Operational</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Working Downloader Script Intact -->
+  <script>
+    let platFormat = 'best';
+    const form = document.getElementById('platform-form');
+    const urlIn = document.getElementById('platform-url-input');
+    const loadingBox = document.getElementById('loading-box-plat');
+    const resultCard = document.getElementById('result-card-plat');
+    const btnSubmit = document.getElementById('btn-submit-plat');
+
+    document.querySelectorAll('.format-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.format-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        platFormat = pill.getAttribute('data-format');
+      });
+    });
+
+    document.getElementById('btn-paste-plat').addEventListener('click', async () => {
+      try {
+        const txt = await navigator.clipboard.readText();
+        if (txt) urlIn.value = txt;
+      } catch (e) {}
+    });
+
+    document.getElementById('btn-clear-plat').addEventListener('click', () => {
+      urlIn.value = '';
+      resultCard.style.display = 'none';
+      urlIn.focus();
+    });
+
+    async function handlePlatformSubmit(e) {
+      e.preventDefault();
+      const url = urlIn.value.trim();
+      if (!url) return;
+      loadingBox.style.display = 'block';
+      resultCard.style.display = 'none';
+      const errBox = document.getElementById('error-box-plat');
+      if (errBox) errBox.style.display = 'none';
+      btnSubmit.disabled = true;
+      try {
+        const resp = await fetch('/api/v1/download', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url, format: platFormat })
+        });
+        let data = null;
+        if (resp.ok) { data = await resp.json(); }
+        loadingBox.style.display = 'none';
+        const title = (data && (data.title || data.filename)) || 'Media Ready';
+        const rawDlUrl = (data && (data.download_url || data.url)) || url;
+        const filename = (data && data.filename) || 'video.mp4';
+        const thumbUrl = (data && data.thumbnail) || null;
+        const quality = (data && data.quality) || (platFormat === 'mp3' ? 'Audio 320kbps' : platFormat === '1080p' ? '1080p HD' : 'Best Quality');
+        const fmt = (data && data.format) || (platFormat === 'mp3' ? 'MP3 Audio' : 'MP4 Video');
+        const duration = (data && data.duration) || 'HD';
+
+        // Direct Download Link via Streaming Proxy
+        document.getElementById('res-title').textContent = title;
+        document.getElementById('res-quality').textContent = quality;
+        document.getElementById('res-format').textContent = fmt;
+        
+        const dlBtn = document.getElementById('res-dl-btn');
+        saverfromAttachDownload(dlBtn, url, platFormat, filename, data);
+
+        // Show actual video thumbnail from fetched media
+        const thumbEl = document.getElementById('res-thumb');
+        if (thumbUrl && thumbEl) {
+          thumbEl.src = thumbUrl;
+          thumbEl.onerror = function() { this.onerror = null; };
+        }
+        const durEl = document.querySelector('.result-duration');
+        if (durEl && duration) durEl.textContent = duration;
+        resultCard.style.display = 'block';
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {
+        loadingBox.style.display = 'none';
+        alert('Could not complete download request: ' + err.message);
+      } finally {
+        btnSubmit.disabled = false;
+      }
+    }
+
+    // Scroll active link highlight in Table of Contents
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('article section');
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(sec => {
+        const id = sec.getAttribute('id');
+        if (id && sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+          document.querySelectorAll('.toc-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <script src="/static/js/saverfrom.js"></script>
+</body>
+</html>

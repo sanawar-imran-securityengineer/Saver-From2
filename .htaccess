@@ -1,0 +1,93 @@
+# ============================================================================
+#  Hostinger configuration
+#
+#  OPTION A (recommended for this project) — "Setup Python App" / Passenger:
+#    put this file in your domain's public_html BEFORE Node.js/Python routing
+#    so requests are forwarded to the Python app instead of being served
+#    as plain files.
+#
+#  OPTION B — VPS with Apache + mod_proxy: use the commented block at the end.
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# Do NOT let the web server list or serve internal files.
+# ---------------------------------------------------------------------------
+Options -Indexes -MultiViews
+
+# ---------------------------------------------------------------------------
+# Block access to backend internals, virtualenvs and dotfiles.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Never expose Python internals or secrets.
+  RewriteRule ^backend(/|$)      - [F,L]
+  RewriteRule ^deploy(/|$)       - [F,L]
+  RewriteRule (^|/)\.env$        - [F,L]
+  RewriteRule (^|/)\.env\.       - [F,L]
+  RewriteRule (^|/)\.git(/|$)    - [F,L]
+  RewriteRule (^|/)\.venv(/|$)   - [F,L]
+  RewriteRule (^|/)venv(/|$)     - [F,L]
+  RewriteRule (^|/)__pycache__(/|$) - [F,L]
+  RewriteRule (^|/)downloads(/|$)   - [F,L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Static assets from the frontend. Serve directly (fast, no Python involved).
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css              "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml         "access plus 30 days"
+  ExpiresByType image/png             "access plus 30 days"
+  ExpiresByType image/jpeg            "access plus 30 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# NOTE: Do NOT put a "<Files passenger_wsgi.py>" block here and do NOT set
+# WSGIApplicationGroup/PassengerAppRoot manually — Hostinger's Python setup
+# writes its own Passenger directives into this file and they must be kept.
+
+# ============================================================================
+#  OPTION B — VPS with Apache + mod_proxy (uvicorn on 127.0.0.1:8000)
+#  Comment out everything above and uncomment the block below.
+# ============================================================================
+# <VirtualHost *:80>
+#   ServerName example.com
+#   ServerAlias www.example.com
+#
+#   ProxyPreserveHost On
+#   ProxyPass        / http://127.0.0.1:8000/
+#   ProxyPassReverse / http://127.0.0.1:8000/
+#
+#   # Keep websockets working if you add them later.
+#   ProxyPass        /ws ws://127.0.0.1:8000/ws
+#   ProxyPassReverse /ws ws://127.0.0.1:8000/ws
+#
+#   ErrorLog  ${APACHE_LOG_DIR}/saverfrom-error.log
+#   CustomLog ${APACHE_LOG_DIR}/saverfrom-access.log combined
+# </VirtualHost>
+#
+# ============================================================================
+#  OPTION B (alternative) — VPS with nginx
+# ============================================================================
+# server {
+#     listen 80;
+#     server_name example.com www.example.com;
+#
+#     client_max_body_size 10m;
+#     proxy_read_timeout 600s;      # long downloads need a long timeout
+#     proxy_buffering off;          # required for /api/v1/proxy-download streaming
+#
+#     location / {
+#         proxy_pass http://127.0.0.1:8000;
+#         proxy_set_header Host              $host;
+#         proxy_set_header X-Real-IP         $remote_addr;
+#         proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+#         proxy_set_header X-Forwarded-Proto $scheme;
+#     }
+# }

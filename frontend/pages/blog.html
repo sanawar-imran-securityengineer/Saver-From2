@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniDownloader Blog & Guides - Video Extraction & Media Mastery</title>
+  <meta name="description" content="Read expert guides, technical deep dives, and step-by-step tutorials on video downloading, audio extraction, format conversion, and media optimization." />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/icons/saverfrom-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="/" class="brand-container">
+      <div class="brand-logo">
+        <img src="/static/icons/saverfrom-logo.svg" alt="SaverFrom" />
+      </div>
+      <div class="brand-title">
+        SaverFrom
+      </div>
+    </a>
+  </header>
+
+  <main class="page-container" style="max-width:1200px; margin-top:2.5rem;">
+    <!-- Blog Hero -->
+    <div class="blog-hero">
+      <div class="platform-badge-hero">
+        <span>📚 Knowledge Base & Research</span>
+      </div>
+      <h1 class="hero-title">
+        OmniDownloader <span class="gradient-text">Engineering & Media Guides</span>
+      </h1>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="blog-filter-bar">
+      <button class="blog-filter-btn active" onclick="filterBlog('all', this)">All Articles</button>
+      <button class="blog-filter-btn" onclick="filterBlog('platforms', this)">Platform Guides</button>
+      <button class="blog-filter-btn" onclick="filterBlog('audio', this)">Audio Extraction</button>
+      <button class="blog-filter-btn" onclick="filterBlog('mobile', this)">Mobile Tutorials</button>
+      <button class="blog-filter-btn" onclick="filterBlog('tech', this)">Protocols & Architecture</button>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="blog-grid" id="articles-grid">
+      <!-- Article 1 -->
+      <a href="/youtube" class="blog-card" data-category="platforms tech">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #b91c1c, #ef4444);">
+          <span class="blog-card-tag">Platform Deep Dive</span>
+          🎬
+        </div>
+        <div class="blog-card-body">
+          <h3>The Complete Guide to YouTube 1080p & 4K Video Extraction Without Throttles</h3>
+          <p>Examine how adaptive DASH stream parsing and buffer throttling work on YouTube, and how to reliably download 60fps video and isolated audio tracks without compression loss.</p>
+          <div class="blog-card-footer">
+            <span>📖 12 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="/tiktok" class="blog-card" data-category="platforms mobile">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #0f172a, #00f2fe);">
+          <span class="blog-card-tag">No-Watermark Magic</span>
+          🎵
+        </div>
+        <div class="blog-card-body">
+          <h3>How TikWM and ByteDance Stream Extraction Remove Watermarks Cleanly</h3>
+          <p>Discover the difference between client-rendered animated watermarks and raw source MP4 files delivered through edge content delivery networks.</p>
+          <div class="blog-card-footer">
+            <span>📖 10 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="/instagram" class="blog-card" data-category="platforms mobile">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);">
+          <span class="blog-card-tag">Social Media</span>
+          📸
+        </div>
+        <div class="blog-card-body">
+          <h3>Mastering Instagram Reels & Carousel Downloads on iOS & Android</h3>
+          <p>A foolproof walkthrough for grabbing multi-slide carousel videos, audio tracks, and full-resolution Reels without requiring personal login credentials.</p>
+          <div class="blog-card-footer">
+            <span>📖 9 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 4 -->
+      <a href="/reddit" class="blog-card" data-category="platforms tech audio">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #c2410c, #ea580c);">
+          <span class="blog-card-tag">DASH Demuxing</span>
+          🤖
+        </div>
+        <div class="blog-card-body">
+          <h3>Why Reddit Videos Download Without Sound (And How OmniDownloader Fixes It)</h3>
+          <p>Technical breakdown of Reddit's separated v.redd.it video and audio streams, MPEG-DASH manifest structure, and client-side muxing for unified playback.</p>
+          <div class="blog-card-footer">
+            <span>📖 11 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 5 -->
+      <a href="/twitter" class="blog-card" data-category="platforms tech">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #0284c7, #38bdf8);">
+          <span class="blog-card-tag">X / Twitter Architecture</span>
+          🐦
+        </div>
+        <div class="blog-card-body">
+          <h3>Decoding X (Twitter) Video Resolutions: Selecting Max Bitrates Across m3u8 Playlists</h3>
+          <p>Understand how X encodes video at tiered bandwidth levels, and why choosing the highest resolution playlist prevents blurry, pixelated playback.</p>
+          <div class="blog-card-footer">
+            <span>📖 8 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 6 -->
+      <a href="/facebook" class="blog-card" data-category="platforms">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #1e40af, #3b82f6);">
+          <span class="blog-card-tag">Meta Infrastructure</span>
+          👥
+        </div>
+        <div class="blog-card-body">
+          <h3>Facebook Watch & Public Group Video Extraction: Safe Personal Archiving</h3>
+          <p>Best practices for saving tutorials, event streams, and public video archives from Facebook onto local hard drives with zero ad injections.</p>
+          <div class="blog-card-footer">
+            <span>📖 9 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 7 -->
+      <a href="/pinterest" class="blog-card" data-category="platforms mobile">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #991b1b, #dc2626);">
+          <span class="blog-card-tag">Aesthetic Video</span>
+          📌
+        </div>
+        <div class="blog-card-body">
+          <h3>Saving Pinterest Idea Pins & 1080p Video Pins Directly to Camera Roll</h3>
+          <p>Step-by-step instructions for extracting high-bitrate vertical video pins for mood boards, video editing, and personal offline inspiration.</p>
+          <div class="blog-card-footer">
+            <span>📖 7 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 8 -->
+      <a href="/twitch" class="blog-card" data-category="platforms tech">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #581c87, #9333ea);">
+          <span class="blog-card-tag">Live Broadcast</span>
+          🎮
+        </div>
+        <div class="blog-card-body">
+          <h3>Downloading Twitch Clips & Stream VODs in 1080p 60FPS for Esports Highlights</h3>
+          <p>How creators and montage editors extract high-framerate clips from Twitch without stream stutter, buffering, or quality degradation.</p>
+          <div class="blog-card-footer">
+            <span>📖 10 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 9 -->
+      <a href="/snapchat" class="blog-card" data-category="platforms mobile">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg, #b45309, #f59e0b);">
+          <span class="blog-card-tag">Mobile Short-Form</span>
+          👻
+        </div>
+        <div class="blog-card-body">
+          <h3>Snapchat Spotlight Archival Guide: Clean MP4 Saving Without Overlays</h3>
+          <p>How to use public Spotlight share links to extract pristine vertical MP4 clips directly on iOS and Android devices without login credentials.</p>
+          <div class="blog-card-footer">
+            <span>📖 8 min read</span>
+            <span>September 2026</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Standardized Footer -->
+  <footer class="footer" style="margin-top:5rem;">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>⚡ OmniDownloader</h4>
+        <p>The universal, high-speed multi-platform video and audio extraction gateway. Free forever for creators, archivists, and viewers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform Hubs</h5>
+        <ul class="footer-links">
+          <li><a href="/youtube">YouTube Downloader</a></li>
+          <li><a href="/tiktok">TikTok Downloader</a></li>
+          <li><a href="/instagram">Instagram Downloader</a></li>
+          <li><a href="/facebook">Facebook Downloader</a></li>
+          <li><a href="/twitter">Twitter / X Downloader</a></li>
+          <li><a href="/snapchat">Snapchat Downloader</a></li>
+          <li><a href="/pinterest">Pinterest Downloader</a></li>
+          <li><a href="/reddit">Reddit Downloader</a></li>
+          <li><a href="/threads">Threads Downloader</a></li>
+          <li><a href="/twitch">Twitch Downloader</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Trust & Resources</h5>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog & Guides</a></li>
+          <li><a href="/about">About OmniDownloader</a></li>
+          <li><a href="/contact">Contact & Support</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/copyright">DMCA & Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 OmniDownloader Platform. All trademarks and brand assets belong to their respective owners.</p>
+      <div style="display:flex; gap:1rem;">
+        <span style="color:#10b981; font-weight:600;">● All Systems Operational</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function filterBlog(category, btn) {
+      document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cards = document.querySelectorAll('.blog-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

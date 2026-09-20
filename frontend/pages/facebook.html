@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook Video Downloader Free Without Watermark</title>
+  <meta name="description" content="Download Facebook videos, FB Watch, and public Reels in Full HD 1080p MP4 without watermarks. Comprehensive guide, mobile camera roll saving, and troubleshooting." />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/icons/saverfrom-logo.svg" type="image/svg+xml" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saverfrom.local/" },
+          { "@type": "ListItem", "position": 2, "name": "Downloaders", "item": "https://saverfrom.local/#platforms-section" },
+          { "@type": "ListItem", "position": 3, "name": "Facebook Video Downloader", "item": "https://saverfrom.local/facebook" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Facebook Video Downloader Free Without Watermark",
+        "description": "Comprehensive engineering guide to downloading public Facebook Watch videos, Reels, and live archives in Full HD MP4 without watermarks.",
+        "author": { "@type": "Organization", "name": "SaverFrom Research Team" },
+        "publisher": { "@type": "Organization", "name": "SaverFrom", "logo": { "@type": "ImageObject", "url": "https://saverfrom.local/static/icons/facebook.svg" } },
+        "datePublished": "2026-01-25",
+        "dateModified": "2026-09-19"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I download Facebook Watch videos in 1080p Full HD?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmniDownloader extracts both HD and SD stream options, automatically selecting the highest available bitrate up to 1080p 60fps." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do fb.watch mobile short links work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our gateway automatically unravels fb.watch redirection headers to extract the target video ID." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download videos from private Facebook groups?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Videos hosted in closed or private groups require member login authorization and cannot be retrieved through anonymous public gateways." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I save Facebook videos directly to my iPhone Camera Roll?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Download the MP4 in iOS Safari, open the Safari Downloads menu, select the video, tap Share, and tap 'Save Video' to add it to your Photos app." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I extract background audio or music as an MP3?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select the 'Audio MP3' format pill before downloading to isolate the soundtrack at 320kbps." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Facebook Reels supported without watermarks?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Facebook Reels URLs are fully supported and download cleanly in native vertical 9:16 format with zero watermarks." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to install any Facebook downloader app or Chrome extension?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. OmniDownloader runs 100% inside your web browser on desktop, mobile, and tablet devices." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does a Facebook video say 'Content Not Found'?",
+            "acceptedAnswer": { "@type": "Answer", "text": "This occurs if the video privacy was changed to 'Friends Only', the video was deleted, or the author blocked public embedding." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there any limit on video length or file size?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Our streaming proxy handles long lectures, podcasts, and documentaries up to several gigabytes with zero cutoffs." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is downloading Facebook videos safe and virus-free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmniDownloader delivers clean MP4 media containers directly from source CDNs with no adware or software installers." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="/" class="brand-container">
+      <div class="brand-logo">
+        <img src="/static/icons/saverfrom-logo.svg" alt="SaverFrom" />
+      </div>
+      <div class="brand-title">
+        SaverFrom
+      </div>
+    </a>
+  </header>
+
+  <!-- Page Hero -->
+  <main class="page-container">
+    <nav class="breadcrumb-nav">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/#platforms-section">Downloaders</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Facebook Video Downloader</span>
+    </nav>
+
+    <div class="page-hero">
+      <h1 class="hero-title">
+        Facebook Video Downloader Free Without Watermark
+      </h1>
+      </div>
+
+    <!-- Interactive Platform Downloader Card -->
+    <div id="downloader-box" class="downloader-box" style="margin-bottom:3rem; border-color:#1877F240;">
+      <form id="platform-form" onsubmit="handlePlatformSubmit(event)">
+        <div class="input-wrapper" style="border-color:#1877F250;">
+          <div class="input-icon">
+            <img src="/static/icons/facebook.svg" alt="Facebook" style="width:22px; height:22px;" />
+          </div>
+          <input
+            type="url"
+            id="platform-url-input"
+            class="url-input"
+            placeholder="https://www.facebook.com/watch/?v=... or https://fb.watch/..."
+            value="https://www.facebook.com/watch/?v=123456789012345"
+            required
+            autocomplete="off"
+          />
+          <button type="button" id="btn-paste-plat" class="input-action-btn">📋 Paste</button>
+          <button type="button" id="btn-clear-plat" class="input-action-btn">✕ Clear</button>
+        </div>
+
+        <div class="format-bar">
+          <div class="format-pills">
+            <span class="format-label">Format:</span>
+            <button type="button" class="format-pill active" data-format="best">⚡ Best Quality (HD)</button>
+            <button type="button" class="format-pill" data-format="1080p">🎬 1080p HD</button>
+            <button type="button" class="format-pill" data-format="mp3">🎵 Audio MP3</button>
+          </div>
+          <button type="submit" id="btn-submit-plat" class="btn-download-main" style="background:#1877F2;">
+            <span id="btn-icon-plat">⬇️</span>
+            <span id="btn-text-plat">Download Facebook Video</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Loading Box -->
+      <div id="loading-box-plat" class="loading-box">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.6rem;">
+          <span class="spinner"></span>
+          <span id="loading-msg-plat" style="font-weight:600; color:#1877F2;">Connecting to Facebook extraction gateway...</span>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div id="result-card-plat" class="result-card">
+        <div class="result-content">
+          <div class="result-thumb-wrapper">
+            <img id="res-thumb" class="result-thumb" src="/static/icons/facebook.svg" alt="Thumbnail" />
+            <span class="result-duration">HD</span>
+          </div>
+          <div class="result-info">
+            <h3 id="res-title">Facebook Video Ready</h3>
+            <div class="result-meta">
+              <span style="font-weight:700; color:#1877F2;">Facebook</span>
+              <span>•</span>
+              <span id="res-quality">1080p Full HD</span>
+              <span>•</span>
+              <span id="res-format">MP4 Video</span>
+            </div>
+            <div class="result-actions">
+              <a id="res-dl-btn" href="#" target="_blank" download class="btn-action-primary" style="background:#1877F2;">
+                ⬇️ Download Now
+              </a>
+              <button type="button" id="res-another-btn" class="btn-action-secondary" onclick="document.getElementById('btn-clear-plat').click()">🔄 Download Another</button>
+              <a href="/" class="btn-action-secondary">🏠 Universal Hub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article & SEO Documentation System -->
+    <div class="article-grid-layout">
+      <!-- Main Article Body -->
+      <article class="article-body">
+        <section id="how-to-download">
+          <h2>1. How to Download Facebook Videos in High Definition</h2>
+          <p>
+            Facebook is one of the world's most prolific video ecosystems, hosting millions of news broadcasts, culinary recipes, community tutorials, and viral entertainment clips across Facebook Watch, Pages, Groups, and Reels. However, Facebook's desktop and mobile interfaces provide no native download button to export files as standard MP4 containers.
+          </p>
+          <p>
+            OmniDownloader extracts public Facebook media streams directly from Meta's content delivery infrastructure, delivering clean, high-bandwidth MP4 files without watermarks or browser speed caps.
+          </p>
+
+          <div class="step-cards-container">
+            <div class="step-card">
+              <span class="step-badge">1</span>
+              <h4>Copy Video Link</h4>
+              <p>On Facebook, click or tap the <strong>Share</strong> button on any public video or Reel and choose <strong>Copy Link</strong>. On desktop, you can also copy the URL directly from the address bar.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-badge">2</span>
+              <h4>Paste into OmniDownloader</h4>
+              <p>Paste the copied link into the text input above. Choose between <strong>Best Quality (HD)</strong> or <strong>Audio MP3 (320kbps)</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-badge">3</span>
+              <h4>Download Directly</h4>
+              <p>Click <strong>Download Facebook Video</strong>. Our backend identifies the highest bitrate stream (1080p/720p) and serves the file directly to your device.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="device-walkthrough">
+          <h2>2. Device-Specific Walkthrough: iOS Camera Roll, Android & Desktop</h2>
+
+          <h3>📱 Apple iOS (iPhone & iPad Safari)</h3>
+          <ol>
+            <li>In the Facebook app, tap <strong>Share > More Options > Copy</strong> on the target video.</li>
+            <li>Open <strong>Safari</strong> on your iPhone and go to <code>saverfrom.local/facebook</code>.</li>
+            <li>Paste your URL into the input field and tap <strong>Download Facebook Video</strong>.</li>
+            <li>Tap <strong>Download Now</strong> on the result card. When prompted with <em>"Do you want to download video.mp4?"</em>, tap <strong>Download</strong>.</li>
+            <li>Tap the blue <strong>Downloads icon</strong> in Safari's address bar.</li>
+            <li>Tap the downloaded MP4, tap the iOS <strong>Share button</strong> (box with upward arrow), and select <strong>Save Video</strong>.</li>
+            <li>The clip will now appear directly inside your iPhone Photos Camera Roll!</li>
+          </ol>
+
+          <h3>🤖 Android (Chrome & Samsung Browser)</h3>
+          <ol>
+            <li>In the Facebook app, tap the three dots <code>•••</code> on the video post and select <strong>Copy link</strong>.</li>
+            <li>Open Chrome on your Android smartphone and navigate to OmniDownloader.</li>
+            <li>Paste the link and tap <strong>Download</strong>. The file will save directly to your <code>/Downloads</code> directory.</li>
+            <li>Open your phone's Gallery or Google Photos to view the video offline.</li>
+          </ol>
+
+          <h3>💻 Desktop (Windows, Mac, Linux)</h3>
+          <ol>
+            <li>Right-click any Facebook video in your desktop browser and select <strong>Copy video URL at current time</strong>, or copy from the URL bar.</li>
+            <li>Paste the URL into OmniDownloader and click download.</li>
+            <li>Your browser will instantly download the standalone MP4 container to your hard drive.</li>
+          </ol>
+        </section>
+
+        <section id="url-types">
+          <h2>3. Supported Facebook URL Variations</h2>
+          <p>
+            Facebook employs diverse URL structures depending on client platform, page types, and share mechanisms:
+          </p>
+          <ul>
+            <li><strong>Facebook Watch Links:</strong> <code>https://www.facebook.com/watch/?v=123456789012345</code></li>
+            <li><strong>Mobile Short Links:</strong> <code>https://fb.watch/aBcDeFgHiJ/</code> (auto-unraveled by our gateway).</li>
+            <li><strong>Facebook Reels:</strong> <code>https://www.facebook.com/reel/123456789012345</code></li>
+            <li><strong>Page Post Videos:</strong> <code>https://www.facebook.com/username/videos/123456789012345/</code></li>
+            <li><strong>Mobile Web Links:</strong> <code>https://m.facebook.com/watch/?v=...</code></li>
+          </ul>
+        </section>
+
+        <section id="public-vs-private">
+          <h2>4. Public vs Private Privacy Limitations Explained</h2>
+          <p>
+            Understanding Facebook’s privacy permissions is critical when using web-based extraction utilities:
+          </p>
+          <div class="callout-box callout-note">
+            <span class="callout-icon">🔒</span>
+            <div class="callout-content">
+              <strong>Public Videos Only</strong>
+              <p>
+                OmniDownloader works strictly on <strong>Public</strong> Facebook videos—content marked with the globe 🌐 privacy icon. If a video is posted in a closed/secret group, set to 'Friends Only', or restricted to specific audience lists, Meta requires active user session cookies to authenticate the viewer. To protect user privacy, OmniDownloader never requests or stores your personal Facebook login credentials.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="workflow-diagram">
+          <h2>5. OmniDownloader Facebook Stream Pipeline</h2>
+          <div class="diagram-wrapper">
+            <svg viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="240" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+              <!-- Step 1 -->
+              <rect x="40" y="70" width="180" height="100" rx="12" fill="#ffffff" stroke="#1877f2" stroke-width="2"/>
+              <text x="130" y="105" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">Facebook Link</text>
+              <text x="130" y="130" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">fb.watch / watch/?v=...</text>
+              <text x="130" y="148" fill="#1877f2" font-family="sans-serif" font-size="11" text-anchor="middle">Client Submits Post</text>
+
+              <!-- Arrow 1 -->
+              <path d="M230 120 H280" stroke="#1877f2" stroke-width="2"/>
+              <polygon points="280,120 272,115 272,125" fill="#1877f2"/>
+
+              <!-- Step 2 -->
+              <rect x="290" y="70" width="220" height="100" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+              <text x="400" y="102" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">OmniDownloader Gateway</text>
+              <text x="400" y="124" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">Parses OpenGraph & HTML5 Video</text>
+              <text x="400" y="144" fill="#10b981" font-family="sans-serif" font-size="11" text-anchor="middle">Selects HD 1080p Stream</text>
+
+              <!-- Arrow 2 -->
+              <path d="M520 120 H570" stroke="#1877f2" stroke-width="2"/>
+              <polygon points="570,120 562,115 562,125" fill="#1877f2"/>
+
+              <!-- Step 3 -->
+              <rect x="580" y="70" width="180" height="100" rx="12" fill="#ffffff" stroke="#1877f2" stroke-width="2"/>
+              <text x="670" y="105" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">Meta Video CDN</text>
+              <text x="670" y="130" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">fbcdn.net Direct Stream</text>
+              <text x="670" y="148" fill="#10b981" font-family="sans-serif" font-size="11" text-anchor="middle">Watermark-Free MP4 Saved</text>
+            </svg>
+            <p class="diagram-caption">Figure 4: Direct extraction and streaming from Meta fbcdn.net edge distribution clusters.</p>
+          </div>
+        </section>
+
+        <section id="sd-vs-hd">
+          <h2>6. Facebook SD vs HD Bitrate & Resolution Matrix</h2>
+          <div class="table-responsive">
+            <table class="seo-table">
+              <thead>
+                <tr>
+                  <th>Stream Profile</th>
+                  <th>Resolution</th>
+                  <th>Video Codec</th>
+                  <th>Audio Quality</th>
+                  <th>Ideal Use Case</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>HD Quality (High Definition)</strong></td>
+                  <td>1080p / 720p</td>
+                  <td>H.264 (High Profile)</td>
+                  <td>192 kbps Stereo AAC</td>
+                  <td><span class="badge-table badge-success">Archiving, TV playback, editing</span></td>
+                </tr>
+                <tr>
+                  <td><strong>SD Quality (Standard)</strong></td>
+                  <td>480p / 360p</td>
+                  <td>H.264 (Baseline)</td>
+                  <td>128 kbps AAC</td>
+                  <td><span class="badge-table badge-neutral">Low bandwidth, mobile messaging</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Audio Only (MP3)</strong></td>
+                  <td>Stereo Track</td>
+                  <td>MP3</td>
+                  <td>320 kbps CBR</td>
+                  <td><span class="badge-table badge-info">Podcasts, speeches, music isolation</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>7. Troubleshooting Facebook Download Issues</h2>
+          <div class="table-responsive">
+            <table class="seo-table">
+              <thead>
+                <tr>
+                  <th>Encountered Error</th>
+                  <th>Root Cause</th>
+                  <th>Resolution Steps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Video Not Found / Private Error</strong></td>
+                  <td>Post privacy set to 'Friends' or hosted in a private group.</td>
+                  <td>Check the video post in an incognito window. If you cannot see it without logging in, the video is private and cannot be downloaded.</td>
+                </tr>
+                <tr>
+                  <td><strong>Download Returns Lower Quality</strong></td>
+                  <td>The creator uploaded the original media in 720p or standard definition.</td>
+                  <td>OmniDownloader always extracts the highest quality available on Facebook servers. If HD was not encoded by Meta, only SD can be retrieved.</td>
+                </tr>
+                <tr>
+                  <td><strong>fb.watch Link Fails to Expand</strong></td>
+                  <td>Malformed share query or expired short link.</td>
+                  <td>Open the video in your Facebook app, tap 'Copy Link' again, or open in a browser to get the full <code>facebook.com/watch/?v=...</code> URL.</td>
+                </tr>
+                <tr>
+                  <td><strong>Audio Out of Sync</strong></td>
+                  <td>Variable framerate encoding in older Facebook live stream recordings.</td>
+                  <td>Play the video in VLC Media Player, which automatically adjusts PTS timecode offsets.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="faq-section">
+          <h2>8. Frequently Asked Questions (FAQ)</h2>
+          <div class="faq-container">
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I download Facebook Watch videos in 1080p Full HD?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. OmniDownloader extracts both HD and SD stream options, automatically selecting the highest available bitrate up to 1080p 60fps.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do fb.watch mobile short links work?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. Our gateway automatically unravels fb.watch redirection headers to extract the target video ID.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I download videos from private Facebook groups?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No. Videos hosted in closed or private groups require member login authorization and cannot be retrieved through anonymous public gateways.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How do I save Facebook videos directly to my iPhone Camera Roll?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Download the MP4 in iOS Safari, open the Safari Downloads menu, select the video, tap Share, and tap 'Save Video' to add it to your Photos app.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I extract background audio or music as an MP3?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. Select the 'Audio MP3' format pill before downloading to isolate the soundtrack at 320kbps.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Are Facebook Reels supported without watermarks?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. Facebook Reels URLs are fully supported and download cleanly in native vertical 9:16 format with zero watermarks.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do I need to install any Facebook downloader app or Chrome extension?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No. OmniDownloader runs 100% inside your web browser on desktop, mobile, and tablet devices.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Why does a Facebook video say 'Content Not Found'?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>This occurs if the video privacy was changed to 'Friends Only', the video was deleted, or the author blocked public embedding.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Is there any limit on video length or file size?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Our streaming proxy handles long lectures, podcasts, and documentaries up to several gigabytes with zero cutoffs.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Is downloading Facebook videos safe and virus-free?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. OmniDownloader delivers clean MP4 media containers directly from source CDNs with no adware or software installers.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="ethical-advisory">
+          <h2>9. Legal Compliance & Fair Use</h2>
+          <div class="callout-box callout-warning">
+            <span class="callout-icon">⚖️</span>
+            <div class="callout-content">
+              <strong>Respect Content Creators</strong>
+              <p>
+                Downloaded videos should be used strictly for personal archiving, offline viewing, or educational analysis. Never monetize or commercialize media created by other individuals without written permission.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Related Platform Guides -->
+        <div class="related-section">
+          <h3>Explore Other Free Media Downloaders</h3>
+          <div class="related-grid">
+            <a href="/instagram" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/instagram.svg" alt="Instagram" class="related-icon" />
+                <h4>Instagram Downloader</h4>
+              </div>
+              <p>Extract Instagram Reels, Carousel videos, and Stories without login.</p>
+            </a>
+            <a href="/youtube" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/youtube.svg" alt="YouTube" class="related-icon" />
+                <h4>YouTube Downloader</h4>
+              </div>
+              <p>Download 4K videos, Shorts, and 320kbps MP3 audio with zero speed caps.</p>
+            </a>
+            <a href="/threads" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/threads.svg" alt="Threads" class="related-icon" />
+                <h4>Threads Downloader</h4>
+              </div>
+              <p>Save media attachments and viral clips from Meta Threads posts.</p>
+            </a>
+            <a href="/twitter" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/twitter.svg" alt="Twitter" class="related-icon" />
+                <h4>Twitter / X Downloader</h4>
+              </div>
+              <p>Capture high-bitrate X video posts and animated GIFs at full resolution.</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Standardized Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>⚡ OmniDownloader</h4>
+        <p>The universal, high-speed multi-platform video and audio extraction gateway. Free forever for creators, archivists, and viewers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform Hubs</h5>
+        <ul class="footer-links">
+          <li><a href="/youtube">YouTube Downloader</a></li>
+          <li><a href="/tiktok">TikTok Downloader</a></li>
+          <li><a href="/instagram">Instagram Downloader</a></li>
+          <li><a href="/facebook">Facebook Downloader</a></li>
+          <li><a href="/twitter">Twitter / X Downloader</a></li>
+          <li><a href="/snapchat">Snapchat Downloader</a></li>
+          <li><a href="/pinterest">Pinterest Downloader</a></li>
+          <li><a href="/reddit">Reddit Downloader</a></li>
+          <li><a href="/threads">Threads Downloader</a></li>
+          <li><a href="/twitch">Twitch Downloader</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Trust & Resources</h5>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog & Guides</a></li>
+          <li><a href="/about">About OmniDownloader</a></li>
+          <li><a href="/contact">Contact & Support</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/copyright">DMCA & Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 OmniDownloader Platform. All trademarks and brand assets belong to their respective owners.</p>
+      <div style="display:flex; gap:1rem;">
+        <span style="color:#10b981; font-weight:600;">● All Systems Operational</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Working Downloader Script Intact -->
+  <script>
+    let platFormat = 'best';
+    const form = document.getElementById('platform-form');
+    const urlIn = document.getElementById('platform-url-input');
+    const loadingBox = document.getElementById('loading-box-plat');
+    const resultCard = document.getElementById('result-card-plat');
+    const btnSubmit = document.getElementById('btn-submit-plat');
+
+    document.querySelectorAll('.format-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.format-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        platFormat = pill.getAttribute('data-format');
+      });
+    });
+
+    document.getElementById('btn-paste-plat').addEventListener('click', async () => {
+      try {
+        const txt = await navigator.clipboard.readText();
+        if (txt) urlIn.value = txt;
+      } catch (e) {}
+    });
+
+    document.getElementById('btn-clear-plat').addEventListener('click', () => {
+      urlIn.value = '';
+      resultCard.style.display = 'none';
+      urlIn.focus();
+    });
+
+    async function handlePlatformSubmit(e) {
+      e.preventDefault();
+      const url = urlIn.value.trim();
+      if (!url) return;
+      loadingBox.style.display = 'block';
+      resultCard.style.display = 'none';
+      btnSubmit.disabled = true;
+      try {
+        const resp = await fetch('/api/v1/download', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url, format: platFormat })
+        });
+        let data = null;
+        if (resp.ok) { data = await resp.json(); }
+        loadingBox.style.display = 'none';
+        const title = (data && (data.title || data.filename)) || 'Facebook Video Ready';
+        const rawDlUrl = (data && (data.download_url || data.url)) || url;
+        const filename = (data && data.filename) || 'facebook_video.mp4';
+        const thumbUrl = (data && data.thumbnail) || null;
+        const quality = (data && data.quality) || (platFormat === 'mp3' ? 'Audio 320kbps' : platFormat === '1080p' ? '1080p HD' : 'Best Quality (HD)');
+        const fmt = (data && data.format) || (platFormat === 'mp3' ? 'MP3 Audio' : 'MP4 Video');
+        const duration = (data && data.duration) || 'HD';
+
+        // Direct Download Link via Streaming Proxy
+        document.getElementById('res-title').textContent = title;
+        document.getElementById('res-quality').textContent = quality;
+        document.getElementById('res-format').textContent = fmt;
+        
+        const dlBtn = document.getElementById('res-dl-btn');
+        saverfromAttachDownload(dlBtn, url, platFormat, filename, data);
+
+        const thumbEl = document.getElementById('res-thumb');
+        if (thumbUrl && thumbEl) {
+          thumbEl.src = thumbUrl;
+          thumbEl.onerror = function() { this.onerror = null; };
+        }
+        const durEl = document.querySelector('.result-duration');
+        if (durEl && duration) durEl.textContent = duration;
+        resultCard.style.display = 'block';
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {
+        loadingBox.style.display = 'none';
+        alert('Could not complete download request: ' + err.message);
+      } finally {
+        btnSubmit.disabled = false;
+      }
+    }
+
+    // Scroll active link highlight in Table of Contents
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('article section');
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(sec => {
+        const id = sec.getAttribute('id');
+        if (id && sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+          document.querySelectorAll('.toc-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <script src="/static/js/saverfrom.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="sfGrad" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="45%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#sfGrad)"/>
+  <path d="M26 19.5c0-.83.67-1.5 1.5-1.5h9c.83 0 1.5.67 1.5 1.5v11.2h3.15c1.2 0 1.86 1.4 1.1 2.32L33.1 45.1a1.5 1.5 0 0 1-2.2 0L21.25 32.52c-.76-.92-.1-2.32 1.1-2.32H25.5V19.5z" fill="#fff"/>
+  <rect x="21.5" y="47.2" width="21" height="3.6" rx="1.8" fill="#fff" opacity="0.92"/>
+</svg>

@@ -1,0 +1,706 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twitter / X Video Downloader Free Without Watermark</title>
+  <meta name="description" content="Download Twitter and X videos, GIFs, and media tweets in Full HD MP4 at maximum bitrates. Comprehensive guide, m3u8 stream parsing, mobile steps, and troubleshooting." />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/icons/saverfrom-logo.svg" type="image/svg+xml" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saverfrom.local/" },
+          { "@type": "ListItem", "position": 2, "name": "Downloaders", "item": "https://saverfrom.local/#platforms-section" },
+          { "@type": "ListItem", "position": 3, "name": "Twitter / X Video Downloader", "item": "https://saverfrom.local/twitter" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Twitter / X Video Downloader Free Without Watermark",
+        "description": "Comprehensive engineering guide to downloading Twitter (X) video posts, spaces audio, and animated GIFs in maximum bitrate MP4 without watermarks.",
+        "author": { "@type": "Organization", "name": "SaverFrom Research Team" },
+        "publisher": { "@type": "Organization", "name": "SaverFrom", "logo": { "@type": "ImageObject", "url": "https://saverfrom.local/static/icons/twitter.svg" } },
+        "datePublished": "2026-01-28",
+        "dateModified": "2026-09-19"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do x.com and twitter.com links both work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmniDownloader seamlessly handles both legacy twitter.com status URLs and modern x.com post links, as well as t.co short links." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download Twitter animated GIFs as MP4 video files?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Twitter encodes all GIFs as looping MP4 files to conserve bandwidth. OmniDownloader extracts the pure MP4 stream directly." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I save an X video directly to my iPhone Camera Roll?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Open Safari, tap Download Now, access the Safari Downloads list, select the file, tap the Share icon, and choose 'Save Video' to store it in Photos." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Twitter serve multiple video resolutions?",
+            "acceptedAnswer": { "@type": "Answer", "text": "X generates multi-bitrate HLS playlists (m3u8). OmniDownloader automatically queries the master manifest and extracts the highest resolution stream available." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download videos from private or protected X accounts?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Videos from protected/private profiles require account authorization. Only public tweets can be downloaded anonymously." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I extract only the audio as an MP3 file?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select the 'Audio MP3' format button on the downloader card to isolate the soundtrack at 320kbps." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are downloads from X completely watermark-free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmniDownloader retrieves the authentic video container directly from X's media CDN before any watermarks are rendered." }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I do if a tweet contains sensitive media?",
+            "acceptedAnswer": { "@type": "Answer", "text": "SaverFrom extracts public media regardless of client warning flags, provided the tweet has not been suspended or deleted." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a daily limit on how many X videos I can download?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. OmniDownloader offers 100% free, unlimited downloads with zero subscriptions or fees." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to install any app or browser extension?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No installation is required. The tool operates 100% in your browser on desktop, iOS, Android, and tablets." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="/" class="brand-container">
+      <div class="brand-logo">
+        <img src="/static/icons/saverfrom-logo.svg" alt="SaverFrom" />
+      </div>
+      <div class="brand-title">
+        SaverFrom
+      </div>
+    </a>
+  </header>
+
+  <!-- Page Hero -->
+  <main class="page-container">
+    <nav class="breadcrumb-nav">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/#platforms-section">Downloaders</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Twitter / X Video Downloader</span>
+    </nav>
+
+    <div class="page-hero">
+      <h1 class="hero-title">
+        Twitter / X Video Downloader Free Without Watermark
+      </h1>
+      </div>
+
+    <!-- Interactive Platform Downloader Card -->
+    <div id="downloader-box" class="downloader-box" style="margin-bottom:3rem; border-color:#1DA1F240;">
+      <form id="platform-form" onsubmit="handlePlatformSubmit(event)">
+        <div class="input-wrapper" style="border-color:#1DA1F250;">
+          <div class="input-icon">
+            <img src="/static/icons/twitter.svg" alt="Twitter" style="width:22px; height:22px;" />
+          </div>
+          <input
+            type="url"
+            id="platform-url-input"
+            class="url-input"
+            placeholder="https://x.com/username/status/... or https://twitter.com/..."
+            value="https://x.com/user/status/1234567890123456789"
+            required
+            autocomplete="off"
+          />
+          <button type="button" id="btn-paste-plat" class="input-action-btn">📋 Paste</button>
+          <button type="button" id="btn-clear-plat" class="input-action-btn">✕ Clear</button>
+        </div>
+
+        <div class="format-bar">
+          <div class="format-pills">
+            <span class="format-label">Format:</span>
+            <button type="button" class="format-pill active" data-format="best">⚡ Best Quality (Max Bitrate)</button>
+            <button type="button" class="format-pill" data-format="1080p">🎬 1080p HD</button>
+            <button type="button" class="format-pill" data-format="mp3">🎵 Audio MP3</button>
+          </div>
+          <button type="submit" id="btn-submit-plat" class="btn-download-main" style="background:#1DA1F2;">
+            <span id="btn-icon-plat">⬇️</span>
+            <span id="btn-text-plat">Download X / Twitter Video</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Loading Box -->
+      <div id="loading-box-plat" class="loading-box">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.6rem;">
+          <span class="spinner"></span>
+          <span id="loading-msg-plat" style="font-weight:600; color:#1DA1F2;">Connecting to Twitter / X extraction gateway...</span>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div id="result-card-plat" class="result-card">
+        <div class="result-content">
+          <div class="result-thumb-wrapper">
+            <img id="res-thumb" class="result-thumb" src="/static/icons/twitter.svg" alt="Thumbnail" />
+            <span class="result-duration">HD</span>
+          </div>
+          <div class="result-info">
+            <h3 id="res-title">Twitter / X Media Ready</h3>
+            <div class="result-meta">
+              <span style="font-weight:700; color:#1DA1F2;">Twitter / X</span>
+              <span>•</span>
+              <span id="res-quality">1080p Full HD</span>
+              <span>•</span>
+              <span id="res-format">MP4 Video</span>
+            </div>
+            <div class="result-actions">
+              <a id="res-dl-btn" href="#" target="_blank" download class="btn-action-primary" style="background:#1DA1F2;">
+                ⬇️ Download Now
+              </a>
+              <button type="button" id="res-another-btn" class="btn-action-secondary" onclick="document.getElementById('btn-clear-plat').click()">🔄 Download Another</button>
+              <a href="/" class="btn-action-secondary">🏠 Universal Hub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article & SEO Documentation System -->
+    <div class="article-grid-layout">
+      <!-- Main Article Body -->
+      <article class="article-body">
+        <section id="how-to-download">
+          <h2>1. How to Download Twitter / X Videos in High Bitrate</h2>
+          <p>
+            Twitter (rebranded as X) is the digital public square for real-time breaking news, sports highlights, tech announcements, and citizen journalism. However, the X interface does not provide a native save button to export videos as offline MP4 files. When you attempt to save video via browser right-click, you receive only web page elements.
+          </p>
+          <p>
+            OmniDownloader solves this by parsing X’s syndicated media endpoints. Our system examines the master streaming manifest, selects the highest resolution bitrate container, and packages it into a standard MP4 file ready for offline archiving or social editing.
+          </p>
+
+          <div class="step-cards-container">
+            <div class="step-card">
+              <span class="step-badge">1</span>
+              <h4>Copy the Tweet URL</h4>
+              <p>On X/Twitter, click the <strong>Share icon</strong> underneath the tweet and select <strong>Copy link to Tweet</strong>. On desktop, copy the URL directly from the address bar.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-badge">2</span>
+              <h4>Paste into OmniDownloader</h4>
+              <p>Paste the link into the URL input field above. Both <code>x.com</code> and <code>twitter.com</code> domains are automatically recognized.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-badge">3</span>
+              <h4>Download Instant MP4</h4>
+              <p>Click <strong>Download X / Twitter Video</strong>. Our gateway evaluates the master manifest and delivers the highest-bitrate MP4 attachment directly to your device.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="device-walkthrough">
+          <h2>2. Mobile & Desktop Walkthrough: iOS Camera Roll, Android & PC</h2>
+
+          <h3>📱 Apple iOS (iPhone & iPad Safari)</h3>
+          <ol>
+            <li>In the X app, tap the <strong>Share icon</strong> below the video tweet and select <strong>Copy link</strong>.</li>
+            <li>Launch <strong>Safari</strong> on your iPhone and go to <code>saverfrom.local/twitter</code>.</li>
+            <li>Paste your copied link into the input field and tap <strong>Download X / Twitter Video</strong>.</li>
+            <li>When the result card appears, tap <strong>Download Now</strong>. Safari will prompt: <em>"Do you want to download video.mp4?"</em> Tap <strong>Download</strong>.</li>
+            <li>Tap the blue <strong>Downloads icon</strong> in Safari's address bar.</li>
+            <li>Tap the downloaded MP4, tap the iOS <strong>Share button</strong> (box with upward arrow), and select <strong>Save Video</strong>.</li>
+            <li>The clip is now saved in full resolution inside your iOS Photos Camera Roll!</li>
+          </ol>
+
+          <h3>🤖 Android (Chrome & Mobile Browsers)</h3>
+          <ol>
+            <li>In the X app, tap <strong>Share > Copy link</strong>.</li>
+            <li>Open Chrome on Android, visit OmniDownloader, and paste the tweet URL.</li>
+            <li>Tap <strong>Download</strong>. The file will save directly into your <code>/Downloads</code> directory.</li>
+            <li>The video is immediately viewable in Google Photos, Gallery, or CapCut.</li>
+          </ol>
+
+          <h3>💻 Desktop (Windows, macOS, Linux)</h3>
+          <ol>
+            <li>Right-click the timestamp or video on X, select <strong>Copy Link Address</strong>.</li>
+            <li>Paste into OmniDownloader and click download.</li>
+            <li>Your browser will instantly save the MP4 video directly to your PC.</li>
+          </ol>
+        </section>
+
+        <section id="url-formats">
+          <h2>3. Supported Twitter / X URL Formats</h2>
+          <p>
+            OmniDownloader supports all official Twitter and X domain variations:
+          </p>
+          <ul>
+            <li><strong>Modern X Post Links:</strong> <code>https://x.com/username/status/1234567890123456789</code></li>
+            <li><strong>Legacy Twitter URLs:</strong> <code>https://twitter.com/username/status/1234567890123456789</code></li>
+            <li><strong>Mobile Shortened Links:</strong> <code>https://t.co/aBcDeFg123</code> (automatically expanded by our gateway).</li>
+            <li><strong>Mobile Subdomain Links:</strong> <code>https://mobile.twitter.com/...</code></li>
+          </ul>
+        </section>
+
+        <section id="hls-manifest">
+          <h2>4. Technical Deep Dive: HTTP Live Streaming (HLS) & Bitrate Selection</h2>
+          <p>
+            Twitter encodes video using <strong>HTTP Live Streaming (HLS)</strong> wrapped in <code>.m3u8</code> playlist manifests. When you watch a video on X, your client requests a master playlist containing multiple bandwidth tiers:
+          </p>
+          <ul>
+            <li><code>320 × 568</code> (low mobile bandwidth ~256 kbps)</li>
+            <li><code>720 × 1280</code> (standard HD ~832 kbps)</li>
+            <li><code>1080 × 1920</code> (full high bitrate ~2.1 Mbps)</li>
+          </ul>
+          <p>
+            Many low-quality downloaders naively grab the first stream listed in the manifest (which is often the lowest 240p or 360p resolution!). OmniDownloader's backend parses the entire m3u8 playlist, compares the declared bandwidth attributes, and downloads the highest available bitrate chunk stream.
+          </p>
+        </section>
+
+        <section id="workflow-diagram">
+          <h2>5. OmniDownloader Twitter / X Stream Pipeline</h2>
+          <div class="diagram-wrapper">
+            <svg viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="240" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+              <!-- Step 1 -->
+              <rect x="40" y="70" width="180" height="100" rx="12" fill="#ffffff" stroke="#1da1f2" stroke-width="2"/>
+              <text x="130" y="105" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">Tweet Status Link</text>
+              <text x="130" y="130" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">x.com/.../status/...</text>
+              <text x="130" y="148" fill="#1da1f2" font-family="sans-serif" font-size="11" text-anchor="middle">Client Submits Tweet</text>
+
+              <!-- Arrow 1 -->
+              <path d="M230 120 H280" stroke="#1da1f2" stroke-width="2"/>
+              <polygon points="280,120 272,115 272,125" fill="#1da1f2"/>
+
+              <!-- Step 2 -->
+              <rect x="290" y="70" width="220" height="100" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+              <text x="400" y="102" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">OmniDownloader Gateway</text>
+              <text x="400" y="124" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">Parses Master m3u8 Manifest</text>
+              <text x="400" y="144" fill="#10b981" font-family="sans-serif" font-size="11" text-anchor="middle">Selects Max Bitrate Stream</text>
+
+              <!-- Arrow 2 -->
+              <path d="M520 120 H570" stroke="#1da1f2" stroke-width="2"/>
+              <polygon points="570,120 562,115 562,125" fill="#1da1f2"/>
+
+              <!-- Step 3 -->
+              <rect x="580" y="70" width="180" height="100" rx="12" fill="#ffffff" stroke="#1da1f2" stroke-width="2"/>
+              <text x="670" y="105" fill="#0f172a" font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">X / Twitter CDN</text>
+              <text x="670" y="130" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">twimg.com Video Server</text>
+              <text x="670" y="148" fill="#10b981" font-family="sans-serif" font-size="11" text-anchor="middle">Pristine MP4 Delivered</text>
+            </svg>
+            <p class="diagram-caption">Figure 5: Master m3u8 playlist parsing and max-bitrate stream extraction from X/Twitter infrastructure.</p>
+          </div>
+        </section>
+
+        <section id="gif-conversion">
+          <h2>6. Animated GIF Tweets: Converting to Universal MP4</h2>
+          <p>
+            When you post a GIF on Twitter, the platform converts the bulky GIF into an H.264 MP4 video container without audio. Legacy GIF formats consume 10x more data and lack hardware acceleration.
+          </p>
+          <p>
+            OmniDownloader retrieves these animated media files as clean, lightweight MP4 files that loop seamlessly across all video players, presentation slides, and Discord chats.
+          </p>
+        </section>
+
+        <section id="bitrate-matrix">
+          <h2>7. Twitter / X Resolution, Bitrate & Codec Matrix</h2>
+          <div class="table-responsive">
+            <table class="seo-table">
+              <thead>
+                <tr>
+                  <th>Resolution Tier</th>
+                  <th>Bitrate</th>
+                  <th>Video Codec</th>
+                  <th>Audio Codec</th>
+                  <th>Best Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1080p Full HD</strong></td>
+                  <td>2,176 kbps</td>
+                  <td>H.264 (High)</td>
+                  <td>128 kbps AAC</td>
+                  <td><span class="badge-table badge-success">High quality display, video editing</span></td>
+                </tr>
+                <tr>
+                  <td><strong>720p HD</strong></td>
+                  <td>832 kbps</td>
+                  <td>H.264 (Main)</td>
+                  <td>128 kbps AAC</td>
+                  <td><span class="badge-table badge-info">Standard mobile viewing, messaging</span></td>
+                </tr>
+                <tr>
+                  <td><strong>480p / 360p</strong></td>
+                  <td>320 kbps</td>
+                  <td>H.264 (Baseline)</td>
+                  <td>64 kbps AAC</td>
+                  <td><span class="badge-table badge-neutral">Low bandwidth, cellular connections</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Audio Only (MP3)</strong></td>
+                  <td>320 kbps</td>
+                  <td>Lossless Audio</td>
+                  <td>MP3 Stereo</td>
+                  <td><span class="badge-table badge-warn">X Spaces archives, spoken podcasts</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>8. Troubleshooting Twitter / X Download Errors</h2>
+          <div class="table-responsive">
+            <table class="seo-table">
+              <thead>
+                <tr>
+                  <th>Issue Encountered</th>
+                  <th>Root Cause</th>
+                  <th>Step-by-Step Fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Protected / Private Account</strong></td>
+                  <td>The author has protected their tweets, locking media behind follower permissions.</td>
+                  <td>Protected tweets cannot be retrieved by public web downloaders. Only public posts can be downloaded.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sensitive Content Warning</strong></td>
+                  <td>Tweet marked as containing sensitive or adult media by X moderation.</td>
+                  <td>OmniDownloader bypasses client-side sensitive content blurs and extracts the underlying media directly.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tweet Contains Multiple Videos</strong></td>
+                  <td>Post contains up to 4 separate video tiles.</td>
+                  <td>Our extractor defaults to downloading the primary or first video tile in the post.</td>
+                </tr>
+                <tr>
+                  <td><strong>Deleted Tweet / Status 404</strong></td>
+                  <td>Author removed the tweet or the account was suspended.</td>
+                  <td>Once a tweet is deleted from X servers, the media can no longer be retrieved.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="faq-section">
+          <h2>9. Frequently Asked Questions (FAQ)</h2>
+          <div class="faq-container">
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do x.com and twitter.com links both work?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. OmniDownloader seamlessly handles both legacy twitter.com status URLs and modern x.com post links, as well as t.co short links.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I download Twitter animated GIFs as MP4 video files?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. Twitter encodes all GIFs as looping MP4 files to conserve bandwidth. OmniDownloader extracts the pure MP4 stream directly.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How do I save an X video directly to my iPhone Camera Roll?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Open Safari, tap Download Now, access the Safari Downloads list, select the file, tap the Share icon, and choose 'Save Video' to store it in Photos.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Why does Twitter serve multiple video resolutions?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>X generates multi-bitrate HLS playlists (m3u8). OmniDownloader automatically queries the master manifest and extracts the highest resolution stream available.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I download videos from private or protected X accounts?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No. Videos from protected/private profiles require account authorization. Only public tweets can be downloaded anonymously.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I extract only the audio as an MP3 file?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. Select the 'Audio MP3' format button on the downloader card to isolate the soundtrack at 320kbps.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Are downloads from X completely watermark-free?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. OmniDownloader retrieves the authentic video container directly from X's media CDN before any watermarks are rendered.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What should I do if a tweet contains sensitive media?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>OmniDownloader extracts public media regardless of client warning flags, provided the tweet has not been suspended or deleted.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Is there a daily limit on how many X videos I can download?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No. OmniDownloader offers 100% free, unlimited downloads with zero subscriptions or fees.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do I need to install any app or browser extension?
+                <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No installation is required. The tool operates 100% in your browser on desktop, iOS, Android, and tablets.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="ethical-advisory">
+          <h2>10. Legal & Fair Use Guidelines</h2>
+          <div class="callout-box callout-warning">
+            <span class="callout-icon">⚖️</span>
+            <div class="callout-content">
+              <strong>Respect Copyright and Creator Rights</strong>
+              <p>
+                Downloaded Twitter/X media should be used exclusively for personal archival preservation, fair use journalism, academic citation, or offline review. Always attribute original posters and do not redistribute unauthorized content.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Related Platform Guides -->
+        <div class="related-section">
+          <h3>Explore Other Free Media Downloaders</h3>
+          <div class="related-grid">
+            <a href="/reddit" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/reddit.svg" alt="Reddit" class="related-icon" />
+                <h4>Reddit Downloader</h4>
+              </div>
+              <p>Download v.redd.it videos with crystal clear merged audio tracks.</p>
+            </a>
+            <a href="/youtube" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/youtube.svg" alt="YouTube" class="related-icon" />
+                <h4>YouTube Downloader</h4>
+              </div>
+              <p>Download 4K videos, Shorts, and 320kbps MP3 audio with zero speed caps.</p>
+            </a>
+            <a href="/threads" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/threads.svg" alt="Threads" class="related-icon" />
+                <h4>Threads Downloader</h4>
+              </div>
+              <p>Save media attachments and viral clips from Meta Threads posts.</p>
+            </a>
+            <a href="/tiktok" class="related-card">
+              <div class="related-card-top">
+                <img src="/static/icons/tiktok.svg" alt="TikTok" class="related-icon" />
+                <h4>TikTok Downloader</h4>
+              </div>
+              <p>Download TikTok videos with zero watermark in 1080p HD with sound.</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Standardized Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>⚡ OmniDownloader</h4>
+        <p>The universal, high-speed multi-platform video and audio extraction gateway. Free forever for creators, archivists, and viewers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform Hubs</h5>
+        <ul class="footer-links">
+          <li><a href="/youtube">YouTube Downloader</a></li>
+          <li><a href="/tiktok">TikTok Downloader</a></li>
+          <li><a href="/instagram">Instagram Downloader</a></li>
+          <li><a href="/facebook">Facebook Downloader</a></li>
+          <li><a href="/twitter">Twitter / X Downloader</a></li>
+          <li><a href="/snapchat">Snapchat Downloader</a></li>
+          <li><a href="/pinterest">Pinterest Downloader</a></li>
+          <li><a href="/reddit">Reddit Downloader</a></li>
+          <li><a href="/threads">Threads Downloader</a></li>
+          <li><a href="/twitch">Twitch Downloader</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Trust & Resources</h5>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog & Guides</a></li>
+          <li><a href="/about">About OmniDownloader</a></li>
+          <li><a href="/contact">Contact & Support</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/copyright">DMCA & Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 OmniDownloader Platform. All trademarks and brand assets belong to their respective owners.</p>
+      <div style="display:flex; gap:1rem;">
+        <span style="color:#10b981; font-weight:600;">● All Systems Operational</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Working Downloader Script Intact -->
+  <script>
+    let platFormat = 'best';
+    const form = document.getElementById('platform-form');
+    const urlIn = document.getElementById('platform-url-input');
+    const loadingBox = document.getElementById('loading-box-plat');
+    const resultCard = document.getElementById('result-card-plat');
+    const btnSubmit = document.getElementById('btn-submit-plat');
+
+    document.querySelectorAll('.format-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.format-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        platFormat = pill.getAttribute('data-format');
+      });
+    });
+
+    document.getElementById('btn-paste-plat').addEventListener('click', async () => {
+      try {
+        const txt = await navigator.clipboard.readText();
+        if (txt) urlIn.value = txt;
+      } catch (e) {}
+    });
+
+    document.getElementById('btn-clear-plat').addEventListener('click', () => {
+      urlIn.value = '';
+      resultCard.style.display = 'none';
+      urlIn.focus();
+    });
+
+    async function handlePlatformSubmit(e) {
+      e.preventDefault();
+      const url = urlIn.value.trim();
+      if (!url) return;
+      loadingBox.style.display = 'block';
+      resultCard.style.display = 'none';
+      btnSubmit.disabled = true;
+      try {
+        const resp = await fetch('/api/v1/download', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url, format: platFormat })
+        });
+        let data = null;
+        if (resp.ok) { data = await resp.json(); }
+        loadingBox.style.display = 'none';
+        const title = (data && (data.title || data.filename)) || 'Twitter / X Media Ready';
+        const rawDlUrl = (data && (data.download_url || data.url)) || url;
+        const filename = (data && data.filename) || 'twitter_video.mp4';
+        const thumbUrl = (data && data.thumbnail) || null;
+        const quality = (data && data.quality) || (platFormat === 'mp3' ? 'Audio 320kbps' : platFormat === '1080p' ? '1080p HD' : 'Best Quality (1080p)');
+        const fmt = (data && data.format) || (platFormat === 'mp3' ? 'MP3 Audio' : 'MP4 Video');
+        const duration = (data && data.duration) || 'HD';
+
+        // Direct Download Link via Streaming Proxy
+        document.getElementById('res-title').textContent = title;
+        document.getElementById('res-quality').textContent = quality;
+        document.getElementById('res-format').textContent = fmt;
+        
+        const dlBtn = document.getElementById('res-dl-btn');
+        saverfromAttachDownload(dlBtn, url, platFormat, filename, data);
+
+        const thumbEl = document.getElementById('res-thumb');
+        if (thumbUrl && thumbEl) {
+          thumbEl.src = thumbUrl;
+          thumbEl.onerror = function() { this.onerror = null; };
+        }
+        const durEl = document.querySelector('.result-duration');
+        if (durEl && duration) durEl.textContent = duration;
+        resultCard.style.display = 'block';
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {
+        loadingBox.style.display = 'none';
+        alert('Could not complete download request: ' + err.message);
+      } finally {
+        btnSubmit.disabled = false;
+      }
+    }
+
+    // Scroll active link highlight in Table of Contents
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('article section');
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(sec => {
+        const id = sec.getAttribute('id');
+        if (id && sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+          document.querySelectorAll('.toc-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <script src="/static/js/saverfrom.js"></script>
+</body>
+</html>
