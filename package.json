@@ -1,0 +1,13 @@
+{
+  "name": "saver-from-root",
+  "version": "1.0.0",
+  "description": "Static HTML site",
+  "private": true,
+  "scripts": {
+    "build": "echo \"No build step needed\"",
+    "start": "echo \"Static site - no server needed\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
