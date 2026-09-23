@@ -212,6 +212,9 @@ async def proxy_download(url: str, filename: Optional[str] = None) -> Any:
     if "googlevideo.com" in url:
         headers["Referer"] = "https://www.youtube.com/"
         headers["Origin"] = "https://www.youtube.com/"
+    elif "cdninstagram.com" in url or "fbcdn.net" in url:
+        headers["Referer"] = "https://www.instagram.com/"
+        headers["Origin"] = "https://www.instagram.com/"
 
     client = httpx.AsyncClient(timeout=60.0, follow_redirects=True)
     try:
@@ -230,17 +233,19 @@ async def proxy_download(url: str, filename: Optional[str] = None) -> Any:
 
     async def stream_body():
         try:
-            async for chunk in upstream.aiter_bytes(chunk_size=65536):
+            async for chunk in upstream.aiter_bytes(chunk_size=4194304):  # 4 MB chunks
                 yield chunk
         finally:
             await upstream.aclose()
             await client.aclose()
 
+    import urllib.parse
+    encoded_name = urllib.parse.quote(safe_name)
     return StreamingResponse(
         stream_body(),
         media_type=content_type,
         headers={
-            "Content-Disposition": f'attachment; filename="{safe_name}"',
+            "Content-Disposition": f"attachment; filename*=utf-8''{encoded_name}",
             "Cache-Control": "no-store",
         },
     )

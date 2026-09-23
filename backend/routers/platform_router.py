@@ -148,7 +148,31 @@ def build_platform_router(spec: PlatformSpec) -> APIRouter:
                 payload.url.strip(), settings.DOWNLOADS_DIR, requested, spec
             )
         except DownloadError as exc:
-            raise HTTPException(status_code=502, detail=str(exc)) from exc
+            err_msg = str(exc)
+            # Provide friendlier messages for the most common failure modes.
+            if "corrupted" in err_msg.lower() or "not contain a valid video" in err_msg.lower():
+                detail = (
+                    f"The downloaded file from {spec.name} appears corrupted. "
+                    "This usually means the CDN link expired. Please paste the URL again and retry."
+                )
+            elif "audio track is missing" in err_msg.lower():
+                detail = (
+                    f"Video downloaded successfully but the audio track is missing. "
+                    "FFmpeg is merging the streams — please try once more."
+                )
+            elif "timed out" in err_msg.lower() or "timeout" in err_msg.lower():
+                detail = (
+                    f"The {spec.name} server took too long to respond. "
+                    "Please try again in a moment."
+                )
+            elif "failed after" in err_msg.lower():
+                detail = (
+                    f"Could not download from {spec.name} after multiple attempts. "
+                    f"The post may be private, deleted, or temporarily unavailable. ({err_msg})"
+                )
+            else:
+                detail = err_msg
+            raise HTTPException(status_code=502, detail=detail) from exc
         except Exception as exc:
             raise HTTPException(status_code=500, detail=f"Download failed: {exc}") from exc
 

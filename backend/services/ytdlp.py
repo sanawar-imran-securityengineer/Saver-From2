@@ -16,18 +16,88 @@ def _platform_overrides(spec: Optional[PlatformSpec]) -> Dict[str, Any]:
     if spec is None:
         return {}
     if spec.key == "youtube":
-        # One Android client is enough for itag 18 and avoids sequential
-        # webpage/ios/mweb round-trips that make fetch/download slow.
+        # Android + tv_embedded clients give the fastest CDN URLs and bypass throttle.
         return {
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android"],
+                    "player_client": ["android", "tv_embedded", "web_embedded"],
+                    "skip": ["hls", "dash"],      # prefer direct HTTP streams
                 }
             },
-            "socket_timeout": 15,
+            "socket_timeout": 8,
+            "concurrent_fragment_downloads": 128,  # max parallel for HTTP-chunked
+            "buffersize": 33554432,                # 32 MB buffer — avoids stall on large chunks
+            "http_chunk_size": 20971520,            # 20 MB chunk requests
         }
     if spec.key in ("instagram", "facebook", "threads"):
-        return {"http_headers": {"User-Agent": "facebookexternalhit/1.1"}}
+        # Facebook/Instagram/Threads: use crawler UA + max parallel DASH segments.
+        return {
+            "http_headers": {
+                "User-Agent": "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            },
+            "concurrent_fragment_downloads": 128,  # max DASH segment workers
+            "socket_timeout": 15,
+            "fragment_retries": 2,
+            "buffersize": 33554432,                # 32 MB — FB CDN sends large segments
+            "http_chunk_size": 20971520,
+        }
+    if spec.key == "reddit":
+        # v.redd.it DASH: separate a/v streams — max workers to fetch in parallel.
+        return {
+            "socket_timeout": 12,
+            "fragment_retries": 2,
+            "concurrent_fragment_downloads": 128,
+            "buffersize": 33554432,
+            "http_chunk_size": 20971520,
+        }
+    if spec.key == "pinterest":
+        # Pinterest CDN: force yt-dlp to use the generic extractor so video URLs
+        # hidden in JSON-LD / og:video tags are found when the Pinterest extractor
+        # fails.  Also raise concurrency and buffer size for speed.
+        return {
+            "extractor_args": {
+                "pinterest": {
+                    "locale": ["en"],   # English locale avoids geo-redirect errors
+                },
+            },
+            "socket_timeout": 12,
+            "fragment_retries": 2,
+            "concurrent_fragment_downloads": 128,
+            "buffersize": 33554432,
+            "http_chunk_size": 20971520,
+            "nocheckcertificate": True,  # some Pinterest CDN nodes have cert issues
+        }
+    if spec.key == "tiktok":
+        # yt-dlp fallback for TikTok (tikwm is the primary extractor).
+        return {
+            "format": "best[ext=mp4]/best",
+            "socket_timeout": 10,
+            "concurrent_fragment_downloads": 64,
+            "buffersize": 16777216,
+        }
+    if spec.key == "twitch":
+        # Twitch VODs/clips use HLS — max parallel segment downloads for speed.
+        return {
+            "socket_timeout": 10,
+            "concurrent_fragment_downloads": 64,
+            "fragment_retries": 3,
+            "buffersize": 16777216,
+        }
+    if spec.key == "twitter":
+        # Twitter/X video — can have multiple quality streams.
+        return {
+            "socket_timeout": 10,
+            "concurrent_fragment_downloads": 64,
+            "buffersize": 16777216,
+        }
+    if spec.key == "snapchat":
+        return {
+            "socket_timeout": 10,
+            "concurrent_fragment_downloads": 64,
+            "buffersize": 16777216,
+        }
     return {}
 
 

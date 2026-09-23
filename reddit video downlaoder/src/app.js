@@ -531,7 +531,7 @@ function initInteractions(root) {
 
         infoDebounce = setTimeout(async () => {
           try {
-            const res = await fetch(`/api/info?url=${encodeURIComponent(val)}`)
+            const res = await fetch(`/api/reddit/info?url=${encodeURIComponent(val)}`)
             if (!res.ok) return
             const data = await res.json()
             if (data && (data.title || data.thumbnail)) {
@@ -598,7 +598,7 @@ function initInteractions(root) {
       downloadBtn.setAttribute('aria-busy', 'true')
 
       try {
-        const res = await fetch('/api/download', {
+        const res = await fetch('/api/reddit/download', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url, option }),

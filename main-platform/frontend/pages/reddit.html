@@ -41,6 +41,22 @@
     ]
   }
   </script>
+
+  
+  <!-- SEO & Social Meta Tags injected by script -->
+  <link rel="canonical" href="https://saverfrom.com/reddit" />
+  <meta property="og:title" content="Reddit Video Downloader Free With Audio" />
+  <meta property="og:description" content="Download Reddit v.redd.it videos with audio merged seamlessly in 1080p MP4. Explains DASH stream separation, audio merge, mobile guide, format table, and FAQ for all subreddits." />
+  <meta property="og:url" content="https://saverfrom.com/reddit" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SaverFrom" />
+  <meta property="og:image" content="https://saverfrom.com/static/icons/saverfrom-logo.svg" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reddit Video Downloader Free With Audio" />
+  <meta name="twitter:description" content="Download Reddit v.redd.it videos with audio merged seamlessly in 1080p MP4. Explains DASH stream separation, audio merge, mobile guide, format table, and FAQ for all subreddits." />
+  <meta name="twitter:image" content="https://saverfrom.com/static/icons/saverfrom-logo.svg" />
+  <meta name="keywords" content="reddit video downloader, reddit video with audio, save reddit video" />
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -530,14 +546,11 @@
         <ul class="footer-links">
           <li><a href="/youtube">YouTube Downloader</a></li>
           <li><a href="/tiktok">TikTok Downloader</a></li>
-          <li><a href="/instagram">Instagram Downloader</a></li>
-          <li><a href="/facebook">Facebook Downloader</a></li>
+<li><a href="/facebook">Facebook Downloader</a></li>
           <li><a href="/twitter">Twitter / X Downloader</a></li>
           <li><a href="/snapchat">Snapchat Downloader</a></li>
-          <li><a href="/pinterest">Pinterest Downloader</a></li>
-          <li><a href="/reddit">Reddit Downloader</a></li>
-          <li><a href="/threads">Threads Downloader</a></li>
-          <li><a href="/twitch">Twitch Downloader</a></li>
+<li><a href="/reddit">Reddit Downloader</a></li>
+<li><a href="/twitch">Twitch Downloader</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -613,7 +626,9 @@
         const quality = (data && data.quality) || (platFormat === 'mp3' ? 'Audio 320kbps' : platFormat === '1080p' ? '1080p HD' : 'Best Quality');
         const fmt = (data && data.format) || (platFormat === 'mp3' ? 'MP3 Audio' : 'MP4 Video');
         const duration = (data && data.duration) || 'HD';
-        const directDlUrl = '/api/v1/proxy-download?url=' + encodeURIComponent(rawDlUrl) + '&filename=' + encodeURIComponent(filename);
+        // If server returns a merge-download URL (relative path), use it directly
+        const isMergeUrl = (data && data.is_merge_url) || rawDlUrl.startsWith('/api/v1/merge-download');
+        const directDlUrl = isMergeUrl ? rawDlUrl : ('/api/v1/proxy-download?url=' + encodeURIComponent(rawDlUrl) + '&filename=' + encodeURIComponent(filename));
         document.getElementById('res-title').textContent = title;
         document.getElementById('res-quality').textContent = quality;
         document.getElementById('res-format').textContent = fmt;

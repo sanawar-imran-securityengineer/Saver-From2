@@ -1,1 +1,0 @@
-# SwiftFetch core utilities

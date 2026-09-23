@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OmniDownloader - All-in-One Video Downloader Platform</title>
-  <meta name="description" content="Download high quality videos & audio from YouTube, TikTok, Instagram, Facebook, Twitter, Pinterest, Reddit, Snapchat, Threads, and Twitch." />
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <meta name="description" content="Download videos from YouTube, Instagram, TikTok, and more with our free all-in-one media downloader. High quality, no watermarks, and fast downloads." />
+  
+  <link rel="canonical" href="https://yourdomain.com/" />
+  
+  <meta property="og:title" content="OmniDownloader - Universal All-Video Downloader" />
+  <meta property="og:description" content="Download videos and audio from over 10 platforms instantly. Best quality, fast, and free." />
+  <meta property="og:type" content="website" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OmniDownloader - Universal All-Video Downloader" />
+  
+  <link rel="stylesheet" href="/static/style.css" />
   <link rel="icon" href="/static/icons/youtube.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -20,7 +30,8 @@
     </a>
     <nav class="nav-links">
       <a href="/" class="active">Home</a>
-      <a href="#downloader-section">All-in-One</a>
+      <a href="/pages/blog.html">Blog</a>
+      <a href="/pages/disclaimer.html">Disclaimer</a>
       <a href="#platforms-section">Platforms</a>
       <a href="#features-section">Features</a>
       <a href="/pages/status.html" id="nav-status-link">
@@ -42,9 +53,7 @@
       Download Any Video in <br />
       <span class="gradient-text">Highest Quality & MP3</span>
     </h1>
-    <p class="hero-subtitle">
-      The ultimate unified video downloader. Paste any link from YouTube, TikTok, Instagram, Facebook, Twitter/X, Pinterest, Reddit, Snapchat, Threads, or Twitch.
-    </p>
+    
   </section>
 
   <!-- Main All-Video Downloader Section -->
@@ -129,7 +138,16 @@
               <span>•</span>
               <span id="result-format">MP4 Video</span>
             </div>
-            <div class="result-actions">
+            <div class="media-stream-tags" id="result-stream-tags">
+              <span class="media-stream-tag" id="result-tag-video">🎥 Video</span>
+              <span class="media-stream-tag" id="result-tag-audio">🎵 Audio</span>
+            </div>
+            <div class="media-preview-container" id="result-media-player-container" style="display:none;">
+              <video id="result-video-player" class="media-preview-video" controls playsinline>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="result-actions" style="margin-top: 1.2rem;">
               <a id="result-download-btn" href="#" target="_blank" download class="btn-action-primary">
                 ⬇️ Download Now
               </a>
@@ -163,14 +181,11 @@
       <button class="platform-tab-btn active" data-filter="all">🌟 All Platforms</button>
       <button class="platform-tab-btn" data-filter="youtube"><img src="/static/icons/youtube.svg" alt="YT"/> YouTube</button>
       <button class="platform-tab-btn" data-filter="tiktok"><img src="/static/icons/tiktok.svg" alt="TT"/> TikTok</button>
-      <button class="platform-tab-btn" data-filter="instagram"><img src="/static/icons/instagram.svg" alt="IG"/> Instagram</button>
-      <button class="platform-tab-btn" data-filter="facebook"><img src="/static/icons/facebook.svg" alt="FB"/> Facebook</button>
+<button class="platform-tab-btn" data-filter="facebook"><img src="/static/icons/facebook.svg" alt="FB"/> Facebook</button>
       <button class="platform-tab-btn" data-filter="twitter"><img src="/static/icons/twitter.svg" alt="X"/> Twitter/X</button>
-      <button class="platform-tab-btn" data-filter="pinterest"><img src="/static/icons/pinterest.svg" alt="Pin"/> Pinterest</button>
-      <button class="platform-tab-btn" data-filter="reddit"><img src="/static/icons/reddit.svg" alt="Red"/> Reddit</button>
+<button class="platform-tab-btn" data-filter="reddit"><img src="/static/icons/reddit.svg" alt="Red"/> Reddit</button>
       <button class="platform-tab-btn" data-filter="snapchat"><img src="/static/icons/snapchat.svg" alt="Snap"/> Snapchat</button>
-      <button class="platform-tab-btn" data-filter="threads"><img src="/static/icons/threads.svg" alt="Thr"/> Threads</button>
-      <button class="platform-tab-btn" data-filter="twitch"><img src="/static/icons/twitch.svg" alt="Tw"/> Twitch</button>
+<button class="platform-tab-btn" data-filter="twitch"><img src="/static/icons/twitch.svg" alt="Tw"/> Twitch</button>
     </div>
 
     <!-- Platform Cards Grid -->
@@ -186,12 +201,7 @@
           </div>
           <h3>YouTube Downloader</h3>
           <p class="platform-desc">Download Shorts, standard 4K videos, live streams, and extract crystal-clear 320kbps MP3 audio.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">4K UHD</span>
-            <span class="tag-pill">Shorts</span>
-            <span class="tag-pill">MP3 320kbps</span>
-            <span class="tag-pill">No Watermark</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('youtube', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
@@ -217,12 +227,7 @@
           </div>
           <h3>TikTok Downloader</h3>
           <p class="platform-desc">Save TikTok videos with zero watermark in crisp 1080p HD, plus download background music and audio tracks.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">No Watermark</span>
-            <span class="tag-pill">HD MP4</span>
-            <span class="tag-pill">Audio Tracks</span>
-            <span class="tag-pill">Fast</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('tiktok', 'https://www.tiktok.com/@user/video/123456789')">
@@ -236,39 +241,7 @@
           </a>
         </div>
       </div>
-
-      <!-- 3. Instagram -->
-      <div class="platform-card" data-platform="instagram" style="--card-accent:#e1306c; --card-glow:rgba(225,48,108,0.25);">
-        <div>
-          <div class="card-top">
-            <div class="platform-icon-wrap">
-              <img src="/static/icons/instagram.svg" alt="Instagram" />
-            </div>
-            <span class="status-badge-inline"><span class="status-dot"></span> Ready</span>
-          </div>
-          <h3>Instagram Downloader</h3>
-          <p class="platform-desc">Download Instagram Reels, Carousel posts, IGTV, Stories, and High-Resolution photo slides effortlessly.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">Reels</span>
-            <span class="tag-pill">Stories</span>
-            <span class="tag-pill">Carousels</span>
-            <span class="tag-pill">1080p</span>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn-card-select" onclick="quickSelectPlatform('instagram', 'https://www.instagram.com/reel/C8xyz123/')">
-            ⚡ Quick Download
-          </button>
-          <button class="btn-card-select" style="background:rgba(255,255,255,0.05);" onclick="openEmbeddedPreview('instagram', 'Instagram Downloader', '/pages/instagram.html')">
-            👁️ Preview
-          </button>
-          <a href="/pages/instagram.html" class="btn-card-page" title="Open dedicated page">
-            ↗️ Page
-          </a>
-        </div>
-      </div>
-
-      <!-- 4. Facebook -->
+<!-- 4. Facebook -->
       <div class="platform-card" data-platform="facebook" style="--card-accent:#1877f2; --card-glow:rgba(24,119,242,0.25);">
         <div>
           <div class="card-top">
@@ -279,12 +252,7 @@
           </div>
           <h3>Facebook Downloader</h3>
           <p class="platform-desc">Capture Facebook Watch videos, public video reels, group videos, and mobile clips in Full HD quality.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">FB Watch</span>
-            <span class="tag-pill">Public Reels</span>
-            <span class="tag-pill">Full HD</span>
-            <span class="tag-pill">Fast Sync</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('facebook', 'https://www.facebook.com/watch/?v=123456789')">
@@ -310,12 +278,7 @@
           </div>
           <h3>Twitter / X Downloader</h3>
           <p class="platform-desc">Extract videos and high-bitrate animated GIFs directly from tweets and spaces with one-click conversion.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">X Videos</span>
-            <span class="tag-pill">GIFs</span>
-            <span class="tag-pill">Direct MP4</span>
-            <span class="tag-pill">High Bitrate</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('twitter', 'https://x.com/user/status/1234567890123456789')">
@@ -329,38 +292,7 @@
           </a>
         </div>
       </div>
-
-      <!-- 6. Pinterest -->
-      <div class="platform-card" data-platform="pinterest" style="--card-accent:#e60023; --card-glow:rgba(230,0,35,0.25);">
-        <div>
-          <div class="card-top">
-            <div class="platform-icon-wrap">
-              <img src="/static/icons/pinterest.svg" alt="Pinterest" />
-            </div>
-            <span class="status-badge-inline"><span class="status-dot"></span> Ready</span>
-          </div>
-          <h3>Pinterest Downloader</h3>
-          <p class="platform-desc">Save creative Idea Pins, video pins, and aesthetic lifestyle videos directly to your device.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">Idea Pins</span>
-            <span class="tag-pill">Original Quality</span>
-            <span class="tag-pill">No Quality Loss</span>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn-card-select" onclick="quickSelectPlatform('pinterest', 'https://www.pinterest.com/pin/123456789/')">
-            ⚡ Quick Download
-          </button>
-          <button class="btn-card-select" style="background:rgba(255,255,255,0.05);" onclick="openEmbeddedPreview('pinterest', 'Pinterest Downloader', '/pages/pinterest.html')">
-            👁️ Preview
-          </button>
-          <a href="/pages/pinterest.html" class="btn-card-page" title="Open dedicated page">
-            ↗️ Page
-          </a>
-        </div>
-      </div>
-
-      <!-- 7. Reddit -->
+<!-- 7. Reddit -->
       <div class="platform-card" data-platform="reddit" style="--card-accent:#ff4500; --card-glow:rgba(255,69,0,0.25);">
         <div>
           <div class="card-top">
@@ -371,11 +303,7 @@
           </div>
           <h3>Reddit Downloader</h3>
           <p class="platform-desc">Download Reddit (v.redd.it) hosted videos with high-definition audio track perfectly merged into single MP4.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">v.redd.it</span>
-            <span class="tag-pill">Audio Merged</span>
-            <span class="tag-pill">All Subreddits</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('reddit', 'https://www.reddit.com/r/videos/comments/xyz123/')">
@@ -401,11 +329,7 @@
           </div>
           <h3>Snapchat Downloader</h3>
           <p class="platform-desc">Save public Spotlight clips and user shared stories without loss in quality or compression artifacts.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">Spotlight</span>
-            <span class="tag-pill">Public Snaps</span>
-            <span class="tag-pill">Vertical HD</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('snapchat', 'https://www.snapchat.com/spotlight/123456789')">
@@ -419,38 +343,7 @@
           </a>
         </div>
       </div>
-
-      <!-- 9. Threads -->
-      <div class="platform-card" data-platform="threads" style="--card-accent:#ffffff; --card-glow:rgba(255,255,255,0.2);">
-        <div>
-          <div class="card-top">
-            <div class="platform-icon-wrap">
-              <img src="/static/icons/threads.svg" alt="Threads" />
-            </div>
-            <span class="status-badge-inline"><span class="status-dot"></span> Ready</span>
-          </div>
-          <h3>Threads Downloader</h3>
-          <p class="platform-desc">Easily extract and save videos, media attachments, and discussions from Meta Threads posts.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">Threads Media</span>
-            <span class="tag-pill">MP4</span>
-            <span class="tag-pill">Fast Download</span>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn-card-select" onclick="quickSelectPlatform('threads', 'https://www.threads.net/@user/post/xyz123')">
-            ⚡ Quick Download
-          </button>
-          <button class="btn-card-select" style="background:rgba(255,255,255,0.05);" onclick="openEmbeddedPreview('threads', 'Threads Downloader', '/pages/threads.html')">
-            👁️ Preview
-          </button>
-          <a href="/pages/threads.html" class="btn-card-page" title="Open dedicated page">
-            ↗️ Page
-          </a>
-        </div>
-      </div>
-
-      <!-- 10. Twitch -->
+<!-- 10. Twitch -->
       <div class="platform-card" data-platform="twitch" style="--card-accent:#9146ff; --card-glow:rgba(145,70,255,0.25);">
         <div>
           <div class="card-top">
@@ -461,11 +354,7 @@
           </div>
           <h3>Twitch Downloader</h3>
           <p class="platform-desc">Download high-octane gaming clips, highlight reels, and streamer VOD segments at original 1080p 60fps.</p>
-          <div class="platform-tags">
-            <span class="tag-pill">Clips</span>
-            <span class="tag-pill">1080p 60fps</span>
-            <span class="tag-pill">VODs</span>
-          </div>
+          
         </div>
         <div class="card-actions">
           <button class="btn-card-select" onclick="quickSelectPlatform('twitch', 'https://clips.twitch.tv/ExampleClipName123')">
@@ -552,8 +441,7 @@
         <ul class="footer-links">
           <li><a href="/pages/youtube.html">YouTube Downloader</a></li>
           <li><a href="/pages/tiktok.html">TikTok Downloader</a></li>
-          <li><a href="/pages/instagram.html">Instagram Downloader</a></li>
-          <li><a href="/pages/facebook.html">Facebook Downloader</a></li>
+<li><a href="/pages/facebook.html">Facebook Downloader</a></li>
           <li><a href="/pages/twitter.html">Twitter / X Downloader</a></li>
         </ul>
       </div>
@@ -572,13 +460,13 @@
     const PLATFORMS = {
       youtube: { name: 'YouTube', icon: '/static/icons/youtube.svg', color: '#FF0000', bg: 'rgba(255,0,0,0.15)' },
       tiktok: { name: 'TikTok', icon: '/static/icons/tiktok.svg', color: '#00F2FE', bg: 'rgba(0,242,254,0.15)' },
-      instagram: { name: 'Instagram', icon: '/static/icons/instagram.svg', color: '#E1306C', bg: 'rgba(225,48,108,0.15)' },
+
       facebook: { name: 'Facebook', icon: '/static/icons/facebook.svg', color: '#1877F2', bg: 'rgba(24,119,242,0.15)' },
       twitter: { name: 'Twitter / X', icon: '/static/icons/twitter.svg', color: '#1DA1F2', bg: 'rgba(29,161,242,0.15)' },
-      pinterest: { name: 'Pinterest', icon: '/static/icons/pinterest.svg', color: '#E60023', bg: 'rgba(230,0,35,0.15)' },
+
       reddit: { name: 'Reddit', icon: '/static/icons/reddit.svg', color: '#FF4500', bg: 'rgba(255,69,0,0.15)' },
       snapchat: { name: 'Snapchat', icon: '/static/icons/snapchat.svg', color: '#FFFC00', bg: 'rgba(255,252,0,0.15)' },
-      threads: { name: 'Threads', icon: '/static/icons/threads.svg', color: '#FFFFFF', bg: 'rgba(255,255,255,0.15)' },
+
       twitch: { name: 'Twitch', icon: '/static/icons/twitch.svg', color: '#9146FF', bg: 'rgba(145,70,255,0.15)' }
     };
 
@@ -772,7 +660,7 @@
         loadingBox.style.display = 'none';
 
         const title = (downloadData && (downloadData.title || downloadData.filename)) || `${platConfig.name} Video Ready`;
-        const downloadUrl = (downloadData && (downloadData.download_url || downloadData.url || downloadData.downloadUrl)) || url;
+        const downloadUrl = (downloadData && (downloadData.download_url || downloadData.url || downloadData.stream_url || downloadData.downloadUrl || downloadData.direct_url)) || url;
         const thumb = (downloadData && downloadData.thumbnail) || platConfig.icon;
 
         document.getElementById('result-title').textContent = title;
@@ -782,8 +670,26 @@
         document.getElementById('result-quality').textContent = selectedFormat === 'mp3' ? 'Audio 320kbps' : (selectedFormat === '4k' ? '4K UHD' : '1080p FHD');
         document.getElementById('result-format').textContent = selectedFormat === 'mp3' ? 'MP3 Audio' : 'MP4 Video';
         
+        if (downloadData && downloadData.duration_formatted) {
+            document.getElementById('result-duration').textContent = downloadData.duration_formatted;
+        } else {
+            document.getElementById('result-duration').textContent = 'Ready';
+        }
+
         const dlBtn = document.getElementById('result-download-btn');
         dlBtn.href = downloadUrl;
+        
+        const isVideo = selectedFormat !== 'mp3';
+        const playerContainer = document.getElementById('result-media-player-container');
+        const videoPlayer = document.getElementById('result-video-player');
+        
+        if (isVideo && downloadUrl && downloadUrl !== url) {
+            playerContainer.style.display = 'block';
+            videoPlayer.src = downloadUrl;
+        } else {
+            playerContainer.style.display = 'none';
+            videoPlayer.src = '';
+        }
         
         document.getElementById('btn-copy-link').onclick = async () => {
           await navigator.clipboard.writeText(downloadUrl);

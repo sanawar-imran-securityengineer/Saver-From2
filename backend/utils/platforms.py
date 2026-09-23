@@ -146,6 +146,7 @@ def _specs() -> List[PlatformSpec]:
             ),
             sample_url="https://www.reddit.com/r/aww/comments/xxxxxx/",
             formats=("720p", "1080p", "mp3"),
+            needs_ffmpeg=True,
         ),
         PlatformSpec(
             key="snapchat",

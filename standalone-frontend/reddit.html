@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Tags -->
+  <title>VidSaver - Reddit Video Downloader</title>
+  <meta name="description" content="Download high quality videos & audio from YouTube, TikTok, Instagram, Facebook, Twitter, Pinterest, and Reddit. 100% Free, no watermark." />
+  <meta name="keywords" content="reddit video downloader, reddit video with audio, save reddit video" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vidsaver.example.com/" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="VidSaver - Reddit Video Downloader" />
+  <meta property="og:description" content="Download high quality videos & audio from YouTube, TikTok, Instagram, Facebook, Twitter, Pinterest, and Reddit. 100% Free, no watermark." />
+  <meta property="og:type" content="website" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/icons/saverfrom-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand-container">
+      <div class="brand-logo">
+        <img src="assets/icons/saverfrom-logo.svg" alt="VidSaver" />
+      </div>
+      <div class="brand-title">VidSaver</div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">⚡ All-in-One</a>
+      <a href="youtube.html">YouTube</a>
+      <a href="tiktok.html">TikTok</a>
+<a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-pill">
+      <span>✨ Universal Media Hub</span>
+      <span>•</span>
+      <span>10+ Platforms Supported</span>
+      <span>•</span>
+      <span>100% Free</span>
+    </div>
+    <h1 class="hero-title">
+      Download Reddit Videos in <br />
+      <span class="gradient-text">Highest Quality & MP3</span>
+    </h1>
+    <p class="hero-subtitle">
+      Just paste the link below and download instantly. Support for YouTube, Instagram, TikTok, Facebook, Reddit, and more.
+    </p>
+  </section>
+
+  <!-- Universal Downloader Box -->
+  <div class="downloader-container">
+    <div class="downloader-box">
+      <div class="input-wrapper">
+        <span class="input-icon">🔗</span>
+        <input type="url" class="url-input" placeholder="Paste your video link here (e.g., youtube.com/watch?v=...)" />
+        <button class="input-action-btn" type="button">Paste</button>
+      </div>
+      
+      <div class="format-bar">
+        <div class="format-pills">
+          <span class="format-label">Format:</span>
+          <div class="format-pill active">MP4 Video</div>
+          <div class="format-pill">MP3 Audio</div>
+        </div>
+        
+        <button class="btn-download-main">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          Download Now
+        </button>
+      </div>
+      
+      <!-- Example Result Card (Mockup) -->
+      <div class="result-card" style="display: block; margin-top: 20px;">
+        <div class="result-content">
+          <div class="result-thumb-wrapper">
+            <img src="https://picsum.photos/640/360" alt="Video Thumbnail" class="result-thumb" />
+            <span class="result-duration">03:45</span>
+          </div>
+          <div class="result-info">
+            <h3>Sample Video Title</h3>
+            <div class="result-meta">
+              <span>Platform: YouTube</span>
+              <span>1080p HD</span>
+            </div>
+            <div class="result-actions">
+              <a href="#" class="btn-action-primary">Download MP4</a>
+              <button class="btn-action-secondary">Download Other Formats</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    // Simple UI interactions for the mockup
+    document.querySelectorAll('.format-pill').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        document.querySelectorAll('.format-pill').forEach(p => p.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
+

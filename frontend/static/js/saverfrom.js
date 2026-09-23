@@ -3,6 +3,17 @@
     return /(?:youtube\.com|youtu\.be|youtube-nocookie\.com)/i.test(url || "");
   }
 
+  // Platforms that MUST use the server-side /download-file endpoint:
+  // - YouTube: direct CDN links are signed & expire
+  // - TikTok: CDN times out when proxied (> 2 min for large videos)
+  // - Instagram: separate audio+video DASH streams — needs FFmpeg merge for audio
+  // - Reddit / Threads: separate audio+video DASH streams — needs FFmpeg merge
+  // - Pinterest: CDN blocks proxied requests
+  // - Facebook: separate audio+video — needs FFmpeg merge
+  var SERVER_DOWNLOAD_PLATFORMS = [
+    "youtube", "tiktok", "instagram", "reddit", "threads", "pinterest", "facebook"
+  ];
+
   function errorText(data, fallback) {
     if (!data) return fallback;
     if (typeof data.detail === "string") return data.detail;
@@ -32,10 +43,17 @@
     const label = dlBtn.textContent;
     const platform = (resolved && resolved.platform) || "";
     const rawHint = (resolved && (resolved.download_url || resolved.url)) || "";
+
+    // Use server-side download when:
+    // 1. The resolver explicitly flagged it (server_download_required)
+    // 2. The platform is in the SERVER_DOWNLOAD_PLATFORMS list
+    // 3. The URL looks like a YouTube asset or no direct URL was resolved
     const useServer =
+      !!(resolved && resolved.server_download_required) ||
+      SERVER_DOWNLOAD_PLATFORMS.indexOf(platform) !== -1 ||
       isYouTube(sourceUrl) ||
-      platform === "youtube" ||
-      /i\.ytimg\.com|storyboard|\.(jpg|png|webp)(\?|$)/i.test(rawHint);
+      /i\.ytimg\.com|storyboard|\.(jpg|png|webp)(\?|$)/i.test(rawHint) ||
+      !rawHint;
 
     if (!useServer) {
       const raw = (resolved && (resolved.download_url || resolved.url)) || sourceUrl;
@@ -57,7 +75,19 @@
       event.preventDefault();
       if (dlBtn.dataset.busy === "1") return;
       dlBtn.dataset.busy = "1";
-      dlBtn.textContent = "Preparing file...";
+      dlBtn.textContent = "Preparing file\u2026";
+
+      // Show a progress hint for platforms that take longer
+      var slowPlatforms = ["instagram", "reddit", "threads", "facebook", "tiktok", "pinterest"];
+      var progressTimer = null;
+      if (slowPlatforms.indexOf(platform) !== -1) {
+        progressTimer = setTimeout(function () {
+          if (dlBtn.dataset.busy === "1") {
+            dlBtn.textContent = "Downloading & merging\u2026";
+          }
+        }, 5000);
+      }
+
       try {
         const fileUrl = await downloadToServer(sourceUrl, format);
         const link = document.createElement("a");
@@ -77,9 +107,11 @@
           alert(msg);
         }
       } finally {
+        if (progressTimer) clearTimeout(progressTimer);
         dlBtn.dataset.busy = "0";
         dlBtn.textContent = label;
       }
     };
   };
 })(window);
+

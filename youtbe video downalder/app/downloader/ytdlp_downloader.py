@@ -13,10 +13,11 @@ from ..config import settings
 
 logger = logging.getLogger("swiftfetch.ytdlp")
 
+# YouTube uses DASH — video and audio are ALWAYS separate streams; FFmpeg merge is essential.
 FORMAT_MAP = {
-    "360p":  "bv*[height<=360][ext=mp4]+ba[ext=m4a]/bv*[height<=360]+ba/b[height<=360]/b",
-    "720p":  "bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/b[height<=720]/b",
-    "1080p": "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/bv*[height<=1080]+ba/b[height<=1080]/b",
+    "360p":  "bv*[height<=360][ext=mp4]+ba/bv*[height<=360]+ba[ext=m4a]/bv*[height<=360]+ba/b[height<=360]/best",
+    "720p":  "bv*[height<=720][ext=mp4]+ba/bv*[height<=720]+ba[ext=m4a]/bv*[height<=720]+ba/b[height<=720]/best",
+    "1080p": "bv*[height<=1080][ext=mp4]+ba/bv*[height<=1080]+ba[ext=m4a]/bv*[height<=1080]+ba/b[height<=1080]/best",
     "mp3":   "bestaudio/best",
 }
 
@@ -26,6 +27,9 @@ QUALITY_HEIGHTS = {
     "1080p": 1080,
 }
 
+# FFmpeg path — REQUIRED for YouTube as it always delivers video+audio as separate DASH streams.
+_FFMPEG_LOCATION = r"C:\Users\7iha7\AppData\Local\Microsoft\WinGet\Packages\yt-dlp.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-N-125875-g5d4d3bdc61-win64-gpl\bin"
+
 # Common optimized yt-dlp base options for all operations
 _BASE_OPTS = {
     "noplaylist": True,
@@ -34,6 +38,8 @@ _BASE_OPTS = {
     "no_warnings": True,
     "noprogress": True,
     "no_color": True,
+    # FFmpeg location — YouTube DASH streams REQUIRE this for audio+video merge
+    "ffmpeg_location": _FFMPEG_LOCATION,
     # Network resilience
     "socket_timeout": 30,
     "retries": 3,
@@ -85,6 +91,10 @@ class YtDlpDownloader(BaseDownloader):
             opts.update({
                 "format": FORMAT_MAP[option],
                 "merge_output_format": "mp4",
+                # Force FFmpeg merger — YouTube DASH streams always need this
+                "postprocessors": [
+                    {"key": "FFmpegMerger"},
+                ],
             })
 
         return opts

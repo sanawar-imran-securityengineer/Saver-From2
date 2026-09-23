@@ -40,10 +40,10 @@ class Settings(BaseSettings):
     # ── Storage / download limits ─────────────────────────────────────────────
     DOWNLOADS_DIR: Path = BACKEND_DIR / "downloads"
     MAX_FILE_SIZE_MB: int = 500
-    DOWNLOAD_TIMEOUT_SECONDS: int = 300
+    DOWNLOAD_TIMEOUT_SECONDS: int = 600  # big HD videos from IG/Reddit need more time
     FILE_TTL_MINUTES: int = 30
-    MAX_CONCURRENT_DOWNLOADS: int = 3
-    MAX_RETRIES: int = 2
+    MAX_CONCURRENT_DOWNLOADS: int = 8   # more parallel downloads = less queueing
+    MAX_RETRIES: int = 1                 # fewer retries = faster failure on bad URLs
     CLEANUP_INTERVAL_SECONDS: int = 60
 
     # ── Metadata cache (in-process, used by the unified endpoint) ─────────────

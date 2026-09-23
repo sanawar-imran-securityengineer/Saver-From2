@@ -13,10 +13,12 @@ from ..config import settings
 
 logger = logging.getLogger("swiftfetch.ytdlp")
 
+# We prioritize single files ('b') to download extremely fast,
+# avoiding slow DASH fragments and ffmpeg merging whenever possible.
 FORMAT_MAP = {
-    "360p":  "bv*[height<=360][ext=mp4]+ba[ext=m4a]/bv*[height<=360]+ba/b[height<=360]/b/best",
-    "720p":  "bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/b[height<=720]/b/best",
-    "1080p": "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/bv*[height<=1080]+ba/b[height<=1080]/b/best",
+    "360p":  "b[height<=360][ext=mp4]/b[height<=360]/bv*[height<=360][ext=mp4]+ba/bv*[height<=360]+ba[ext=m4a]/best",
+    "720p":  "b[height<=720][ext=mp4]/b[height<=720]/bv*[height<=720][ext=mp4]+ba/bv*[height<=720]+ba[ext=m4a]/best",
+    "1080p": "b[height<=1080][ext=mp4]/b[height<=1080]/bv*[height<=1080][ext=mp4]+ba/bv*[height<=1080]+ba[ext=m4a]/best",
     "mp3":   "bestaudio/best",
 }
 
@@ -26,6 +28,9 @@ QUALITY_HEIGHTS = {
     "1080p": 1080,
 }
 
+# FFmpeg path — required to merge separate video+audio streams.
+_FFMPEG_LOCATION = r"C:\Users\7iha7\AppData\Local\Microsoft\WinGet\Packages\yt-dlp.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-N-125875-g5d4d3bdc61-win64-gpl\bin"
+
 # Common optimized yt-dlp base options for all operations
 _BASE_OPTS = {
     "noplaylist": True,
@@ -34,11 +39,16 @@ _BASE_OPTS = {
     "no_warnings": True,
     "noprogress": True,
     "no_color": True,
+    # FFmpeg location for merging separate video+audio streams
+    "ffmpeg_location": _FFMPEG_LOCATION,
     # Network resilience
     "socket_timeout": 30,
     "retries": 3,
     "extractor_retries": 3,
     "fragment_retries": 5,
+    "concurrent_fragment_downloads": 32,
+    "buffersize": 1048576,
+    "http_chunk_size": 1048576,
     # Realistic browser headers to reduce rate-limiting
     "http_headers": {
         "User-Agent": (
@@ -85,6 +95,8 @@ class YtDlpDownloader(BaseDownloader):
             opts.update({
                 "format": FORMAT_MAP[option],
                 "merge_output_format": "mp4",
+                # yt-dlp handles necessary merges natively. 
+                # Avoid explicit FFmpeg processors to prevent slow 30-second re-encodes.
             })
 
         return opts

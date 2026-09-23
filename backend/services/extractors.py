@@ -40,11 +40,11 @@ def _ytdlp_base_opts() -> Dict[str, Any]:
         "no_color": True,
         "skip_download": True,
         "noplaylist": True,
-        "socket_timeout": 12,
+        "socket_timeout": 10,          # fast fail — don't hang on dead connections
         "retries": 1,
         "extractor_retries": 1,
         "fragment_retries": 1,
-        "concurrent_fragment_downloads": 8,
+        "concurrent_fragment_downloads": 32,  # high parallel fetches for metadata
         "nocheckcertificate": True,
         "geo_bypass": True,
         "http_headers": {

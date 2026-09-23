@@ -91,6 +91,9 @@ def _tiktok_result(data: Dict[str, Any], requested: str, spec: PlatformSpec) -> 
         "extension": ext,
         "formats": _format_payload(chosen, requested, spec),
         "extractor": "tikwm",
+        # TikTok CDN URLs time out when streamed through the proxy endpoint.
+        # The frontend should use the server-side /download endpoint instead.
+        "server_download_required": True,
     }
 
 
@@ -187,15 +190,25 @@ async def resolve_metadata(
         try:
             info = await asyncio.wait_for(
                 asyncio.to_thread(extract_media_with_ytdlp, url, spec),
-                timeout=18,
+                timeout=60,  # more time for Pinterest/Reddit/Threads/Facebook CDNs
             )
         except Exception as exc:
             logger.info("yt-dlp strategy failed for %s: %s", url, exc)
 
         if info:
             stream_url = pick_stream_url(info, requested_format)
+            
+            # Filter out manifest playlists — they are not directly playable.
+            if stream_url and any(ext in stream_url.lower() for ext in (".m3u8", ".mpd")):
+                stream_url = None
+
             if stream_url:
-                return _ytdlp_result(info, stream_url, url, requested_format, spec)
+                result = _ytdlp_result(info, stream_url, url, requested_format, spec)
+                # Flag platforms that need server-side merging (separate a/v streams)
+                # Instagram always uses separate video+audio DASH streams — FFmpeg merge is required.
+                if spec.key in ("reddit", "threads", "pinterest", "facebook"):
+                    result["server_download_required"] = True
+                return result
 
             thumbnail = info.get("best_thumbnail") or info.get("thumbnail")
             if spec.key == "youtube":

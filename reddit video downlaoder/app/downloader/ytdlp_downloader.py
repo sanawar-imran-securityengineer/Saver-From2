@@ -13,10 +13,12 @@ from ..config import settings
 
 logger = logging.getLogger("swiftfetch.ytdlp")
 
+# Reddit uses DASH format — video and audio are separate streams (mp4 container).
+# Format strings: prefer mp4 video + any audio, fallback to merged best, then single best.
 FORMAT_MAP = {
-    "360p":  "bv*[height<=360][ext=mp4]+ba[ext=m4a]/bv*[height<=360]+ba/b[height<=360]/b/best",
-    "720p":  "bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/b[height<=720]/b/best",
-    "1080p": "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/bv*[height<=1080]+ba/b[height<=1080]/b/best",
+    "360p":  "bv*[height<=360][ext=mp4]+ba/bv*[height<=360]+ba[ext=m4a]/bv*[height<=360]+ba/b[height<=360]/best",
+    "720p":  "bv*[height<=720][ext=mp4]+ba/bv*[height<=720]+ba[ext=m4a]/bv*[height<=720]+ba/b[height<=720]/best",
+    "1080p": "bv*[height<=1080][ext=mp4]+ba/bv*[height<=1080]+ba[ext=m4a]/bv*[height<=1080]+ba/b[height<=1080]/best",
     "mp3":   "bestaudio/best",
 }
 
@@ -26,6 +28,10 @@ QUALITY_HEIGHTS = {
     "1080p": 1080,
 }
 
+# FFmpeg path — explicitly set so yt-dlp can merge Reddit DASH audio+video streams.
+# Reddit stores video and audio as separate DASH streams; FFmpeg is required to merge them.
+_FFMPEG_LOCATION = r"C:\Users\7iha7\AppData\Local\Microsoft\WinGet\Packages\yt-dlp.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-N-125875-g5d4d3bdc61-win64-gpl\bin"
+
 # Common optimized yt-dlp base options for all operations
 _BASE_OPTS = {
     "noplaylist": True,
@@ -34,6 +40,8 @@ _BASE_OPTS = {
     "no_warnings": True,
     "noprogress": True,
     "no_color": True,
+    # FFmpeg location for merging Reddit DASH video+audio streams
+    "ffmpeg_location": _FFMPEG_LOCATION,
     # Network resilience
     "socket_timeout": 30,
     "retries": 3,

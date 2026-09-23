@@ -11,10 +11,8 @@ from . import (
     files,
     health,
     instagram,
-    pinterest,
     reddit,
     snapchat,
-    threads,
     tiktok,
     twitch,
     twitter,
@@ -29,10 +27,8 @@ PLATFORM_ROUTERS = [
     instagram.router,
     facebook.router,
     twitter.router,
-    pinterest.router,
     reddit.router,
     snapchat.router,
-    threads.router,
     twitch.router,
 ]
 
@@ -53,10 +49,8 @@ PLATFORM_PAGES = {
     "instagram": "instagram.html",
     "facebook": "facebook.html",
     "twitter": "twitter.html",
-    "pinterest": "pinterest.html",
     "reddit": "reddit.html",
     "snapchat": "snapchat.html",
-    "threads": "threads.html",
     "twitch": "twitch.html",
 }
 
